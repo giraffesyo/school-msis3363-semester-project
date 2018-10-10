@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CTS.master.cs" Inherits="SemesterProject.CTS" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>CTS - Corporate Training Solutions</title>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <asp:ContentPlaceHolder ID="BodyPlaceholder" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
