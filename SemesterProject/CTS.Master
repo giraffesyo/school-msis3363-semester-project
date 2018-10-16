@@ -5,14 +5,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>CTS - Corporate Training Solutions</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/CTSMasterCustom.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-
+    <form id="CTSForm" runat="server">
+        <%-- Header, using responsive bootstrap classes to expand and collapse --%>
+        <div class="navbar">
+            <a class="brand" href="#">CTS</a>
+            <nav class="nav">
+                <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Default.aspx">ABOUT</asp:HyperLink>
+                <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Team.aspx">TEAM</asp:HyperLink>
+                <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/clients.aspx">CLIENTS</asp:HyperLink>
+            </nav>
+            <!-- Empty div as spacer for space-between -->
+            <asp:ContentPlaceHolder ID="NavPlaceholder" runat="server">
+                <div></div>
+            </asp:ContentPlaceHolder>
+        </div>
+        <%-- Body- from content placeholder --%>
         <asp:ContentPlaceHolder ID="BodyPlaceholder" runat="server">
         </asp:ContentPlaceHolder>
 
     </form>
+    <!-- Load scripts tags, should be last thing in the body so we don't block loading content -->
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 </body>
 </html>

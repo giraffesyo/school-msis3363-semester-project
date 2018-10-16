@@ -10,33 +10,42 @@
 namespace SemesterProject {
     
     
-    public partial class CTS {
+    public partial class Team {
         
         /// <summary>
-        /// CTSForm control.
+        /// imgKimStrauss control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm CTSForm;
+        protected global::System.Web.UI.WebControls.Image imgKimStrauss;
         
         /// <summary>
-        /// NavPlaceholder control.
+        /// imgMonicaSadler control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder NavPlaceholder;
+        protected global::System.Web.UI.WebControls.Image imgMonicaSadler;
         
         /// <summary>
-        /// BodyPlaceholder control.
+        /// imgTaylorCrisp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder BodyPlaceholder;
+        protected global::System.Web.UI.WebControls.Image imgTaylorCrisp;
+        
+        /// <summary>
+        /// Image4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image4;
     }
 }

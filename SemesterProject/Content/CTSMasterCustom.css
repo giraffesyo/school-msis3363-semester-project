@@ -1,0 +1,191 @@
+﻿body {
+    background-color: #fff;
+}
+
+
+/* navbar styles*/
+/* Set navbar to black background*/
+.navbar {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    /* Style navbar links with bold white text */
+    .navbar a {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    /* Style brand to be on its own line*/
+    .navbar .brand {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+        /* Create gray border under brand*/
+        .navbar .brand:after {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 80vw;
+            border: 1px solid #808080;
+        }
+
+    /* Reset default hover styles for links*/
+    .navbar a:hover {
+        color: #fff;
+        opacity: .8;
+        text-decoration: none;
+    }
+
+/* Make all nav-links be on same line*/
+.nav .nav-link {
+    display: inline-block;
+}
+
+@media screen and (min-width: 576px) {
+    .navbar {
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .navbar .brand:after {
+            content: none;
+        }
+
+        .navbar .brand {
+            display: inline-block;
+            width: inherit;
+        }
+
+    .nav {
+        display: inline-block;
+        width: inherit;
+    }
+}
+
+/* End navbar styles*/
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    flex-flow: column wrap;
+}
+
+.hero-text {
+    max-width: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.hero-subtext {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.red-sunset {
+    color: #fff;
+    background: #355C7D; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.midnight-city {
+    background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.black {
+    background: #000;
+}
+
+@media screen and (min-width: 576px) {
+    .hero {
+        justify-content: center;
+    }
+
+    .hero-text {
+        font-size: 6rem;
+        max-width: 50%;
+    }
+
+    .hero-subtext {
+        font-size: 1.5rem;
+        max-width: 50%;
+    }
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.vh-50 {
+    height: 50vh;
+}
+
+#teamBody {
+    background: #fff;
+}
+
+.footer {
+    font-size: 2rem;
+    background-color: #000;
+    color: white;
+}
+
+    .footer ul {
+        list-style: none;
+    }
+
+
+
+    .footer li {
+        margin: 1rem;
+    }
+
+.sitemap {
+    margin: auto 0;
+    font-weight: 600;
+}
+
+    /* We set this to inheirt so we make sure that our custom styling works*/
+    .contact li a, .sitemap li a {
+        color: inherit;
+    }
+
+.contact li:nth-child(even) {
+    color: #808080;
+}
+
+
+.headshot {
+    height: 200px;
+    width: 200px;
+    margin: 1rem;
+    display: inline-block;
+}
+
+    .headshot img {
+        opacity: .8;
+        transition: opacity ease .25s;
+        border-radius: 50%;
+    }
+
+        .headshot img:hover {
+            opacity: 1;
+        }
+
+.AsideHeadshots {
+}
+
+.AsideHeadshots p {
+    font-size: 1.5rem;
+}
