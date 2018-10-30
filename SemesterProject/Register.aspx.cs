@@ -16,7 +16,12 @@ namespace SemesterProject
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            //check the information is valid
+            //Send the information to the database
+            //if successfull response redirect
             Response.Redirect("~/clients.aspx");
+            //if were unsuccesful, send an error message to the client
+            // set label to error
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
