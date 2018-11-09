@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CTS.master.cs" Inherits="SemesterProject.CTS" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PublicFacing.master.cs" Inherits="SemesterProject.PublicFacing" %>
 
 <!DOCTYPE html>
 
@@ -30,6 +30,32 @@
         <%-- Body- from content placeholder --%>
         <asp:ContentPlaceHolder ID="BodyPlaceholder" runat="server">
         </asp:ContentPlaceHolder>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col sitemap">
+                        <ul>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">CLIENTS</a></li>
+                            <li><a href="#">TEAM</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <div class="col contact">
+                        <ul>
+                            <li>GET IN TOUCH</li>
+                            <li>GIVE US A CALL</li>
+                            <li><a href='tel:5555555555'>555-555-5555</a></li>
+                            <li>EMAIL</li>
+                            <li><a href='mailto:cts@example.com'>CTS@EXAMPLE.COM</a></li>
+                            <li>SOCIAL</li>
+                            <li><a href="#">FB</a> | <a href="#">TWITTER</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </form>
     <!-- Load scripts tags, should be last thing in the body so we don't block loading content -->

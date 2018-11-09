@@ -148,7 +148,7 @@
 
 
     .footer li {
-        margin: 1rem;
+        margin: 1rem 0;
     }
 
 .sitemap {
@@ -188,4 +188,24 @@
 
 .AsideHeadshots p {
     font-size: 1.5rem;
+}
+
+/* Login form styles*/
+.login {
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login img {
+    width: 100%;
+}
+
+.middleOfPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
