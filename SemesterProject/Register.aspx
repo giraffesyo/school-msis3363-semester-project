@@ -9,8 +9,13 @@
             <div class="form">
                 <div class="form-group">
                     <label for="lblCompanyName">Company:</label>
-                    <asp:Label CssClass="form-control-plaintext" readonly ID="lblCompanyName" runat="server" Text=""></asp:Label>
+                    <asp:Label CssClass="form-control-plaintext" readonly="true" ID="lblCompanyName" runat="server" Text=""></asp:Label>
                 </div>
+                <div class="form-group">
+                    <label for="lblEmployeeCount">Number of Employees:</label>
+                    <asp:Label CssClass="form-control-plaintext" readonly="true" ID="lblEmployeeCount" runat="server" Text=""></asp:Label>
+                </div>
+
                 <div class="form-group">
                     <label for="tbEmail">Email: </label>
                     <asp:TextBox CssClass="form-control" ID="tbEmail" runat="server" placeholder="Email"></asp:TextBox>
