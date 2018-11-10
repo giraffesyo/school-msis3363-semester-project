@@ -7,8 +7,8 @@
     <title>CTS - Corporate Training Solutions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Normalize.css is a css reset, to provide standardized formatting across browsers -->
-    <link href="Content/normalize.css" rel="stylesheet" />
     <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/normalize.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/CTSMasterCustom.css" rel="stylesheet" />
 </head>

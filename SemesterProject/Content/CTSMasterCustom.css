@@ -209,3 +209,59 @@
     justify-content: center;
     height: 80vh;
 }
+
+/* Register page styles*/
+
+.register{
+display: flex;
+flex-direction: column;
+}
+
+.register img {
+    flex-basis: 100%;
+    max-width: 450px;
+    align-self: center;
+}
+
+.register h1 {
+    text-align: center;
+}
+
+
+.register .form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    margin: 0 auto;
+    
+}
+
+
+.register .form-group {
+    flex-basis: 100%;
+    display: flex;   
+    flex-wrap: wrap;
+    justify-content: space-between;
+    white-space: nowrap;
+    align-items: center; 
+    
+}
+
+.reigster label {
+    line-height: 1.5;
+}
+
+
+@media screen and (max-width: 576px){
+  
+    .register img{
+        max-width: 300px;
+    }
+    .register .form {
+    max-width: 100%;
+    margin: 0;
+    }
+    .form-group {
+        margin: 0.5rem;
+    }
+}
