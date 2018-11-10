@@ -34,10 +34,11 @@
                     <asp:TextBox CssClass="form-control" ID="tbDepartment" runat="server" placeholder="Department"></asp:TextBox>
 
                 </div>
-                <div class="form-group">
-                    <label for="cblTrainingPreferences">I am interested in training about: </label>
-                    <asp:CheckBoxList CssClass="form-check" ID="cblTrainingPreferences" runat="server">
+                <div>
+                    <label for="cblTrainingPreferences">I am interested in learning about: </label>
+                    <asp:CheckBoxList ID="cblTrainingPreferences" runat="server" DataSourceID="videoTopics" DataTextField="name" DataValueField="id">
                     </asp:CheckBoxList>
+                    <asp:SqlDataSource ID="videoTopics" runat="server" ConnectionString="<%$ ConnectionStrings:F18_ksmmcquadConnectionString %>" SelectCommand="SELECT * FROM [videoTopics]"></asp:SqlDataSource>
                 </div>
                 <div class="form-group">
                     <label for="ddlNumberOfEmployees">Number Of Employees</label>
