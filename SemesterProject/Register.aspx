@@ -8,12 +8,16 @@
             <img src="images/logo.png" alt="CTS Logo" />
             <div class="form">
                 <div class="form-group">
+                    <label for="lblCompanyName">Company:</label>
+                    <asp:Label CssClass="form-control-plaintext" readonly ID="lblCompanyName" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="form-group">
                     <label for="tbEmail">Email: </label>
                     <asp:TextBox CssClass="form-control" ID="tbEmail" runat="server" placeholder="Email"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="tbPassword">Password: </label>
-                    <asp:TextBox ID="tbPassword" CssClass="form-control" runat="server" placeholder="Password"></asp:TextBox>
+                    <asp:TextBox ID="tbPassword" CssClass="form-control" type="password" runat="server" placeholder="Password"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="tbFirstName">First Name:</label>

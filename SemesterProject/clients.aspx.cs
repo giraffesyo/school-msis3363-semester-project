@@ -11,7 +11,7 @@ namespace SemesterProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -22,7 +22,7 @@ namespace SemesterProject
 
         protected void lbRegister_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Register.aspx");
+            Response.Redirect("~/ChooseCompany.aspx");
         }
     }
 }

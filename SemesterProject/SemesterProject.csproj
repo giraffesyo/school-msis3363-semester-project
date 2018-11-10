@@ -100,6 +100,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChooseCompany.aspx" />
     <Content Include="clients.aspx" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -119,6 +120,7 @@
     <Content Include="CTS.Master" />
     <Content Include="preferences.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RegisterCompany.aspx" />
     <Content Include="scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <Content Include="fonts\FontAwesome.otf" />
@@ -193,6 +195,13 @@
     <Content Include="scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChooseCompany.aspx.cs">
+      <DependentUpon>ChooseCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChooseCompany.aspx.designer.cs">
+      <DependentUpon>ChooseCompany.aspx</DependentUpon>
+    </Compile>
     <Compile Include="clients.aspx.cs">
       <DependentUpon>clients.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -242,6 +251,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterCompany.aspx.cs">
+      <DependentUpon>RegisterCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterCompany.aspx.designer.cs">
+      <DependentUpon>RegisterCompany.aspx</DependentUpon>
     </Compile>
     <Compile Include="Team.aspx.cs">
       <DependentUpon>Team.aspx</DependentUpon>
