@@ -19,7 +19,7 @@
                     <asp:RegularExpressionValidator ID="regexNumberOfEmployees" runat="server" ErrorMessage="You must enter a valid number." Display="Dynamic" ControlToValidate="tbNumberOfEmployees" ForeColor="Red" ValidationExpression="[0-9]*"></asp:RegularExpressionValidator>
                 </div>
                 <div>
-                    <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+                    <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="False" />
                     <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnRegister" runat="server" Text="Create Company" OnClick="btnRegister_Click" />
                 </div>
             </div>

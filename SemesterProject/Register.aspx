@@ -59,7 +59,7 @@
                     <label for="cbNewsleeter">I would like to receive the CTS newsletter</label>
                 </div>
                 <div>
-                    <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+                    <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="False" />
                     <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
                 </div>
             </div>

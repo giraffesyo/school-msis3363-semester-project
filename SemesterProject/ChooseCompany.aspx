@@ -13,7 +13,7 @@
                     <asp:SqlDataSource ID="Companies" runat="server" ConnectionString="<%$ ConnectionStrings:F18_ksmmcquadConnectionString %>" SelectCommand="SELECT [id], [name] FROM [companies]"></asp:SqlDataSource>
                 </div>
                 <div>
-                    <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+                    <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="False" />
                     <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnChoose" runat="server" Text="Continue" OnClick="btnChoose_Click" />
                 </div>
                 <div class="w-100">
