@@ -106,7 +106,7 @@ namespace SemesterProject
                 // Execute command, creating the user, returns the id
                 Int32 UserId = Convert.ToInt32(InsertUserCommand.ExecuteScalar());
                 // Define the insert query for user interests
-                const String userInterestsQuery = "INSERT INTO userInterests (userId, videoTopicId) VALUES (@userId, @videTopicId);";
+                const String userInterestsQuery = "INSERT INTO userInterests (userId, videoTopicId) VALUES (@userId, @videoTopicId);";
                 // Handle the user video interests preferences
                 foreach (ListItem item in cblTrainingPreferences.Items)
                 {
@@ -122,6 +122,7 @@ namespace SemesterProject
                         userInterestParameters.AddWithValue("@userId", UserId);
                         // Add the selected value ( checked box) to the query
                         userInterestParameters.AddWithValue("@videoTopicId", selectedValue);
+                        InsertUserInterests.ExecuteScalar();
                     }
                 }
                 //Close our sql connection
