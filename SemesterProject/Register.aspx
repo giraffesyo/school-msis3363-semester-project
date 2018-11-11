@@ -49,12 +49,7 @@
                     </asp:CheckBoxList>
                     <asp:SqlDataSource ID="videoTopics" runat="server" ConnectionString="<%$ ConnectionStrings:F18_ksmmcquadConnectionString %>" SelectCommand="SELECT * FROM [videoTopics]"></asp:SqlDataSource>
                 </div>
-                <div class="form-group">
-                    <label for="ddlNumberOfEmployees">Number Of Employees</label>
-                    <asp:DropDownList ID="ddlNumberOfEmployees" runat="server"></asp:DropDownList>
-                </div>
-
-                <div>
+                <div class="w-100">
                     <asp:CheckBox ID="cbNewsletter" runat="server" Checked="true" CssClass="form-check-inline" />
                     <label for="cbNewsleeter">I would like to receive the CTS newsletter</label>
                 </div>

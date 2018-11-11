@@ -41,9 +41,9 @@ namespace SemesterProject
         private String GetEmployeeCountString(Int32 EmployeeCount)
         {
             // Return string based on number of employees
-            return EmployeeCount > 500 ? "Over 500":
-                EmployeeCount > 100 ? "Over 100":
-                EmployeeCount > 50 ? "51-100":
+            return EmployeeCount > 500 ? "Over 500" :
+                EmployeeCount > 100 ? "Over 100" :
+                EmployeeCount > 50 ? "51-100" :
                 EmployeeCount > 25 ? "26-50" :
                 EmployeeCount > 10 ? "11-25" : "1-10";
         }
@@ -74,13 +74,63 @@ namespace SemesterProject
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            //check the information is valid
-            //Send the information to the database
-            //if successfull response redirect
+            // only submit the information if the page is valid
+            if (Page.IsValid)
+            {
+                //get the values from the form
+                String email = tbEmail.Text;
+                String password = tbPassword.Text;
+                String first = tbFirstName.Text;
+                String last = tbLastName.Text;
+                String phone = tbPhoneNumber.Text;
+                String title = tbTitle.Text;
+                String department = tbDepartment.Text;
+                bool newsletter = cbNewsletter.Checked;
+                // Create SQL connection
+                myConnection.Open();
+                // Create query
+                const String query = "INSERT INTO users (email, password, firstName, lastName, phone, companyId, title, department, newsletter) VALUES (@email, @password, @firstName, @lastName, @phone, @companyId, @title, @department, @newsletter); SELECT SCOPE_IDENTITY()";
+                // Create Insert Command
+                SqlCommand InsertUserCommand = new SqlCommand(query, myConnection);
+                // Add our parameters
+                SqlParameterCollection Parameters = InsertUserCommand.Parameters;
+                Parameters.AddWithValue("@email", email);
+                Parameters.AddWithValue("@password", password);
+                Parameters.AddWithValue("@firstName", first);
+                Parameters.AddWithValue("@lastName", last);
+                Parameters.AddWithValue("@phone", phone);
+                Parameters.AddWithValue("@companyId", ChosenCompanyId);
+                Parameters.AddWithValue("@title", title);
+                Parameters.AddWithValue("@department", department);
+                Parameters.AddWithValue("@newsletter", newsletter);
+                // Execute command, creating the user, returns the id
+                Int32 UserId = Convert.ToInt32(InsertUserCommand.ExecuteScalar());
+                // Define the insert query for user interests
+                const String userInterestsQuery = "INSERT INTO userInterests (userId, videoTopicId) VALUES (@userId, @videTopicId);";
+                // Handle the user video interests preferences
+                foreach (ListItem item in cblTrainingPreferences.Items)
+                {
+                    // only insert if the item is checked
+                    if (item.Selected)
+                    {
+                        String selectedValue = item.Value;
+                        // Create the sql command with our current connection and the above insert query
+                        SqlCommand InsertUserInterests = new SqlCommand(userInterestsQuery, myConnection);
+                        // Get our parameter list
+                        SqlParameterCollection userInterestParameters = InsertUserInterests.Parameters;
+                        // Add this user to query
+                        userInterestParameters.AddWithValue("@userId", UserId);
+                        // Add the selected value ( checked box) to the query
+                        userInterestParameters.AddWithValue("@videoTopicId", selectedValue);
+                    }
+                }
+                //Close our sql connection
+                myConnection.Close();
+            }
+
+            //successfull response redirect
             Response.Redirect("~/clients.aspx");
-            //if were unsuccesful, send an error message to the client
-            // set label to error
-        }
+            }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
