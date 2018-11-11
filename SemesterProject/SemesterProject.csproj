@@ -102,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChooseCompany.aspx" />
-    <Content Include="clients.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\normalize.css" />
@@ -113,7 +113,7 @@
     <Content Include="images\QuinnHeadshot.jpg" />
     <Content Include="images\TatumHeadshot.jpg" />
     <Content Include="images\TaylorHeadshot.jpg" />
-    <Content Include="loggedin.aspx" />
+    <Content Include="clients.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -203,12 +203,12 @@
     <Compile Include="ChooseCompany.aspx.designer.cs">
       <DependentUpon>ChooseCompany.aspx</DependentUpon>
     </Compile>
-    <Compile Include="clients.aspx.cs">
-      <DependentUpon>clients.aspx</DependentUpon>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="clients.aspx.designer.cs">
-      <DependentUpon>clients.aspx</DependentUpon>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTS.Master.cs">
       <DependentUpon>CTS.Master</DependentUpon>
@@ -224,12 +224,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="loggedin.aspx.cs">
-      <DependentUpon>loggedin.aspx</DependentUpon>
+    <Compile Include="clients.aspx.cs">
+      <DependentUpon>clients.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="loggedin.aspx.designer.cs">
-      <DependentUpon>loggedin.aspx</DependentUpon>
+    <Compile Include="clients.aspx.designer.cs">
+      <DependentUpon>clients.aspx</DependentUpon>
     </Compile>
     <Compile Include="preferences.aspx.cs">
       <DependentUpon>preferences.aspx</DependentUpon>

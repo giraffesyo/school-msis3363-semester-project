@@ -11,17 +11,17 @@ namespace SemesterProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void lbPreferences_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/loggedin.aspx");
+            Server.Transfer("~/preferences.aspx");
         }
 
-        protected void lbRegister_Click(object sender, EventArgs e)
+        protected void lbLogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/ChooseCompany.aspx");
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
