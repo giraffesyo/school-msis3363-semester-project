@@ -16,8 +16,7 @@ namespace SemesterProject
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //Maintain "clients.aspx" page name for the logged in page by using the Server.Transfer method
-            Server.Transfer("~/loggedin.aspx");
+            Response.Redirect("~/loggedin.aspx");
         }
 
         protected void lbRegister_Click(object sender, EventArgs e)

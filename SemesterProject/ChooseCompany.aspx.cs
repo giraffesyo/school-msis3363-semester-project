@@ -18,7 +18,8 @@ namespace SemesterProject
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx");
+            //Redirec to clients page on cancel button clicked
+            Response.Redirect("~/clients.aspx");
         }
         
         protected void ddlCompanyName_DataBound(object sender, EventArgs e)
