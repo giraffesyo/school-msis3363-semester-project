@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace SemesterProject
 {
@@ -20,6 +21,9 @@ namespace SemesterProject
 
         protected void lbLogout_Click(object sender, EventArgs e)
         {
+            //Log the user out
+            FormsAuthentication.SignOut();
+            //Redirect them to the home page
             Response.Redirect("~/Default.aspx");
         }
     }
