@@ -11,7 +11,7 @@
             <div>
 
                 <asp:LinkButton ID="lbRegister" runat="server" OnClick="lbRegister_Click">Not signed up? Register</asp:LinkButton>
-                <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CausesValidation="False" />
             </div>
         </div>
     </div>
