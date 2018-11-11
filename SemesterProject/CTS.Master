@@ -16,7 +16,7 @@
     <form id="CTSForm" runat="server">
         <%-- Header, using responsive bootstrap classes to expand and collapse --%>
         <div class="navbar">
-            <a class="brand" href="#">CTS</a>
+            <a class="brand" href="/Default.aspx">CTS</a>
             <nav class="nav">
                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Default.aspx">ABOUT</asp:HyperLink>
                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Team.aspx">TEAM</asp:HyperLink>

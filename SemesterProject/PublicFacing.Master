@@ -16,7 +16,7 @@
     <form id="CTSForm" runat="server">
         <%-- Header, using responsive bootstrap classes to expand and collapse --%>
         <div class="navbar">
-            <a class="brand" href="#">CTS</a>
+            <a class="brand" href="/Default.aspx">CTS</a>
             <nav class="nav">
                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Default.aspx">ABOUT</asp:HyperLink>
                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Team.aspx">TEAM</asp:HyperLink>
@@ -36,10 +36,10 @@
                 <div class="row">
                     <div class="col sitemap">
                         <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">CLIENTS</a></li>
-                            <li><a href="#">TEAM</a></li>
-                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="/Default.aspx">HOME</a></li>
+                            <li><a href="/clients.aspx">CLIENTS</a></li>
+                            <li><a href="/Team.aspx">TEAM</a></li>
+                            <li><a href="/Contact.aspx">CONTACT</a></li>
                         </ul>
                     </div>
                     <div class="col contact">
