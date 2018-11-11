@@ -23,9 +23,10 @@ namespace SemesterProject
             try
             {
                 myConnection.Open();
-                //get typed in username
+                //get typed in username/email
                 String inputtedEmail = tbUsername.Text;
-                String inputtedPassword = tbPassword.Text;
+                //Hash inputted password
+                String inputtedPassword = Password.HashPassword(tbPassword.Text);
                 //Select the password from the database using the inputted email as our where clause
                 const String query = "SELECT password from users where email = @email";
                 SqlCommand SelectPassword = new SqlCommand(query, myConnection);

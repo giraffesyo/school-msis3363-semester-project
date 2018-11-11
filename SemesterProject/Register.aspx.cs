@@ -79,7 +79,8 @@ namespace SemesterProject
             {
                 //get the values from the form
                 String email = tbEmail.Text;
-                String password = tbPassword.Text;
+                // Hash our passowrd
+                String password = Password.HashPassword(tbPassword.Text);
                 String first = tbFirstName.Text;
                 String last = tbLastName.Text;
                 String phone = tbPhoneNumber.Text;

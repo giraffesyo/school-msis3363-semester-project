@@ -231,6 +231,7 @@
     <Compile Include="clients.aspx.designer.cs">
       <DependentUpon>clients.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs" />
     <Compile Include="preferences.aspx.cs">
       <DependentUpon>preferences.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
