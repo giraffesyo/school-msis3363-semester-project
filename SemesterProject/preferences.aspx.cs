@@ -21,12 +21,12 @@ namespace SemesterProject
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Server.Transfer("~/loggedin.aspx");
+            Server.Transfer("~/clients.aspx");
         }
 
         protected void btnSavePreferences_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/loggedin.aspx");
+            Response.Redirect("~/clients.aspx");
         }
     }
 }
