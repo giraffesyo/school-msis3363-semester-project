@@ -13,15 +13,5 @@ namespace SemesterProject
         {
 
         }
-
-        protected void lbPreferences_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("~/preferences.aspx");
-        }
-
-        protected void lbLogout_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Default.aspx");
-        }
     }
 }

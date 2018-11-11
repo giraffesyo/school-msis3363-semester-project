@@ -22,10 +22,19 @@
                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/Team.aspx">TEAM</asp:HyperLink>
                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/clients.aspx">CLIENTS</asp:HyperLink>
             </nav>
-            <!-- Empty div as spacer for space-between -->
-            <asp:ContentPlaceHolder ID="NavPlaceholder" runat="server">
-                <div></div>
-            </asp:ContentPlaceHolder>
+            <asp:LoginView ID="lvNavbar" runat="server">
+                <AnonymousTemplate>
+                    <!-- Empty div as spacer for space-between -->
+                    <div></div>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    <!-- Classless div because this is a flex space-between, and we should only have one item at the top level to maintain the styling -->
+                    <div>
+                        <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
+                        <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click">Logout</asp:LinkButton>
+                    </div>
+                </LoggedInTemplate>
+            </asp:LoginView>
         </div>
         <%-- Body- from content placeholder --%>
         <asp:ContentPlaceHolder ID="BodyPlaceholder" runat="server">

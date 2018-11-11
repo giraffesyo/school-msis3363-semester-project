@@ -27,9 +27,3 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="NavPlaceholder" runat="server">
-    <!-- Classless div because this is a flex space-between, and we should only have one item at the top level to maintain the styling -->
-    <div>
-    <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
-    <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click">Logout</asp:LinkButton></div>
-</asp:Content>
