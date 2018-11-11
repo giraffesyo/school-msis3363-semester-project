@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PublicFacing.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SemesterProject.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithFooter.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SemesterProject.Default" %>
 
-<asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
+<asp:Content ContentPlaceHolderID="nestedBody" runat="server">
     <div class="hero red-sunset">
         <div class="hero-text">CTS brings training to the next level</div>
         <div class="hero-subtext">

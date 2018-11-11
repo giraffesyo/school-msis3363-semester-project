@@ -30,7 +30,8 @@
         <%-- Body- from content placeholder --%>
         <asp:ContentPlaceHolder ID="BodyPlaceholder" runat="server">
         </asp:ContentPlaceHolder>
-
+        <asp:ContentPlaceHolder ID="FooterPlaceholder" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
     <!-- Load scripts tags, should be last thing in the body so we don't block loading content -->
     <script src="scripts/jquery-3.3.1.min.js"></script>

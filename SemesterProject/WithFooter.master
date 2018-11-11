@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="WithFooter.master.cs" Inherits="SemesterProject.WithFooter" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="BodyPlaceholder" runat="server">
+    <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterPlaceholder" runat="server">
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col sitemap">
+                    <ul>
+                        <li><a href="/Default.aspx">HOME</a></li>
+                        <li><a href="/clients.aspx">CLIENTS</a></li>
+                        <li><a href="/Team.aspx">TEAM</a></li>
+                        <li><a href="/Contact.aspx">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="col contact">
+                    <ul>
+                        <li>GET IN TOUCH</li>
+                        <li>GIVE US A CALL</li>
+                        <li><a href='tel:5555555555'>555-555-5555</a></li>
+                        <li>EMAIL</li>
+                        <li><a href='mailto:cts@example.com'>CTS@EXAMPLE.COM</a></li>
+                        <li>SOCIAL</li>
+                        <li><a href="#">FB</a> | <a href="#">TWITTER</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

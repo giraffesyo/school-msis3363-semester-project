@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SemesterProject
 {
-    public partial class PublicFacing : System.Web.UI.MasterPage
+    public partial class WithFooter : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

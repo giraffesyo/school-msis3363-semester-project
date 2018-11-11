@@ -36,7 +36,9 @@ namespace SemesterProject
                 if (password == null)
                 {
                     //the username did not exist in the database
-                    System.Diagnostics.Debug.WriteLine("Invalid username");
+                    //System.Diagnostics.Debug.WriteLine("Invalid username");
+                    //Show "invalid password" so we don't reveal accounts existence or non existence
+                    loginMessage.Text = "Incorrect Passowrd";
                 }
                 else if (password == inputtedPassword)
                 {
@@ -48,7 +50,9 @@ namespace SemesterProject
                 else
                 {
                     // the password was incorrect
-                    System.Diagnostics.Debug.WriteLine("Invalid password");
+                    //System.Diagnostics.Debug.WriteLine("Invalid password");
+                    // Show incorrect message message
+                    loginMessage.Text = "Incorrect Password";
                 }
                 //Response.Redirect("~/loggedin.aspx");
             }

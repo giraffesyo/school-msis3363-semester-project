@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PublicFacing.Master" AutoEventWireup="true" CodeBehind="Team.aspx.cs" Inherits="SemesterProject.Team" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithFooter.Master" AutoEventWireup="true" CodeBehind="Team.aspx.cs" Inherits="SemesterProject.Team" %>
 
-<asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
+<asp:Content ContentPlaceHolderID="nestedBody" runat="server">
     <div id="teamBody">
         <div class="container-fluid">
             <div class="row mt-4">
@@ -24,10 +24,10 @@
                         <asp:Image CssClass="img-fluid" ID="imgMonicaSadler" runat="server" ImageUrl="~/images/TatumHeadshot.jpg" />
                     </div>
                     <div class="headshot">
-                        <asp:Image CssClass="img-fluid" ID="imgTaylorCrisp" runat="server" ImageUrl="~/images/QuinnHeadshot.jpg" />
+                        <asp:Image CssClass="img-fluid" ID="imgQuinn" runat="server" ImageUrl="~/images/QuinnHeadshot.jpg" />
                     </div>
                     <div class="headshot">
-                        <asp:Image CssClass="img-fluid" ID="Image4" runat="server" ImageUrl="~/images/TaylorHeadshot.jpg" />
+                        <asp:Image CssClass="img-fluid" ID="imgTaylorCrisp" runat="server" ImageUrl="~/images/TaylorHeadshot.jpg" />
                     </div>
                 </div>
                 <div class="AsideHeadshots col-12 col-md-4 d-flex align-items-center order-0 order-md-1 offset-md-1">

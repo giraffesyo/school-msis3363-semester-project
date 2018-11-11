@@ -38,5 +38,14 @@ namespace SemesterProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder BodyPlaceholder;
+        
+        /// <summary>
+        /// FooterPlaceholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterPlaceholder;
     }
 }
