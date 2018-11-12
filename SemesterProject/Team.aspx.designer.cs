@@ -31,6 +31,15 @@ namespace SemesterProject {
         protected global::System.Web.UI.WebControls.Image imgMonicaSadler;
         
         /// <summary>
+        /// imgQuinn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgQuinn;
+        
+        /// <summary>
         /// imgTaylorCrisp control.
         /// </summary>
         /// <remarks>
@@ -38,14 +47,5 @@ namespace SemesterProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgTaylorCrisp;
-        
-        /// <summary>
-        /// Image4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image4;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Company Registration" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="RegisterCompany.aspx.cs" Inherits="SemesterProject.RegisterCompany" %>
+﻿<%@ Page Title="CTS - Company Registration" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="RegisterCompany.aspx.cs" Inherits="SemesterProject.RegisterCompany" %>
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div>

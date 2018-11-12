@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="preferences.aspx.cs" Inherits="SemesterProject.preferences" %>
+﻿<%@ Page Title="CTS - Preferences" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="preferences.aspx.cs" Inherits="SemesterProject.preferences" %>
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div class="d-flex flex-column justify-content-center ml-auto mr-auto w-25 vh-100">

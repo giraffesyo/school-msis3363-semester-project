@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithFooter.Master" AutoEventWireup="true" CodeBehind="Team.aspx.cs" Inherits="SemesterProject.Team" %>
+﻿<%@ Page Title="CTS - Team" Language="C#" MasterPageFile="~/WithFooter.Master" AutoEventWireup="true" CodeBehind="Team.aspx.cs" Inherits="SemesterProject.Team" %>
 
 <asp:Content ContentPlaceHolderID="nestedBody" runat="server">
     <div id="teamBody">

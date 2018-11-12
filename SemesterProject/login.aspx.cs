@@ -27,12 +27,29 @@ namespace SemesterProject
                 String inputtedEmail = tbUsername.Text;
                 //Hash inputted password
                 String inputtedPassword = Password.HashPassword(tbPassword.Text);
-                //Select the password from the database using the inputted email as our where clause
-                const String query = "SELECT password from users where email = @email";
-                SqlCommand SelectPassword = new SqlCommand(query, myConnection);
-                SelectPassword.Parameters.AddWithValue("@email", inputtedEmail);
-                // Get the password from the database, convert it to string or null if the username doesn't exist in the db
-                String password = SelectPassword.ExecuteScalar()?.ToString();
+                //Select the password and administrator bit from the database using the inputted email as our where clause
+                const String query = "SELECT password, administrator from users where email = @email";
+                SqlCommand SelectPasswordAndAdministrator = new SqlCommand(query, myConnection);
+                SelectPasswordAndAdministrator.Parameters.AddWithValue("@email", inputtedEmail);
+
+                //Create SqlDataReader which is a buffer holding our Password string and Administrator bit
+                SqlDataReader buffer = SelectPasswordAndAdministrator.ExecuteReader();
+                // declare password and administrator then set them in below if statement
+                String password;
+                bool administrator;
+                if (buffer.Read())
+                {
+                    // Get the password from the database, convert it to string or null if the username doesn't exist in the db
+                    password = buffer[0]?.ToString();
+                    // get administrator bit from second column returned
+                    administrator = (bool)buffer[1];
+                }
+                else
+                {
+                    //default values
+                    password = null;
+                    administrator = false;
+                }
                 //Validate credentials by comparing the database password with our passowrd
                 if (password == null)
                 {
@@ -44,9 +61,17 @@ namespace SemesterProject
                 else if (password == inputtedPassword)
                 {
                     //we're dealing with an authorized user
-                    System.Diagnostics.Debug.WriteLine("Valid password");
-                    // Redirect the user to the logged in page...
-                    FormsAuthentication.RedirectFromLoginPage(inputtedEmail, true);
+                    //System.Diagnostics.Debug.WriteLine("Valid password");
+                    //Create the authentication ticket for the user 
+                    FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(inputtedEmail, true, 30);
+                    //Encrypt the ticket
+                    String encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                    //Create an authorization cookie with the name decided by the FormsAuthentication class and the information we created above
+                    HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                    //Add the cookie to the HTTP response
+                    HttpContext.Current.Response.Cookies.Add(authCookie);
+                    //Redirect the user to the logged in page...
+                    Response.Redirect(FormsAuthentication.GetRedirectUrl(inputtedEmail, true));
                 }
                 else
                 {

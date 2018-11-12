@@ -18,8 +18,7 @@
     <AssemblyName>SemesterProject</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44339</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -102,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChooseCompany.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="login.aspx" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -202,6 +202,10 @@
     </Compile>
     <Compile Include="ChooseCompany.aspx.designer.cs">
       <DependentUpon>ChooseCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CTSRoleProvider.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

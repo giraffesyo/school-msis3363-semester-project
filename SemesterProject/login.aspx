@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="SemesterProject.login" %>
+﻿<%@ Page Title="CTS - Login" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="SemesterProject.login" %>
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div class="middleOfPage">

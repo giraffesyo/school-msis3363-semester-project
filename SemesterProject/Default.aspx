@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithFooter.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SemesterProject.Default" %>
+﻿<%@ Page Title="Corporate Training Solutions" Language="C#" MasterPageFile="~/WithFooter.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SemesterProject.Default" %>
 
 <asp:Content ContentPlaceHolderID="nestedBody" runat="server">
     <div class="hero red-sunset">

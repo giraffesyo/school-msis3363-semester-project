@@ -11,7 +11,7 @@ namespace SemesterProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //System.Diagnostics.Debug.WriteLine("Is admin: " + HttpContext.Current.User.IsInRole("admin"));
         }
     }
 }

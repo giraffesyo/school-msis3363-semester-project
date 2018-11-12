@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="clients.aspx.cs" Inherits="SemesterProject.clients" %>
+﻿<%@ Page Title="CTS - Client Portal" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="clients.aspx.cs" Inherits="SemesterProject.clients" %>
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div class="row">
