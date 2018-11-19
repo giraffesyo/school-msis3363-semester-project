@@ -30,17 +30,17 @@
                 <LoggedInTemplate>
                     <!-- Classless div because this is a flex space-between, and we should only have one item at the top level to maintain the styling -->
                     <div>
-                        <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
-                        <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click">Logout</asp:LinkButton>
+                        <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server" CausesValidation="False"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
+                        <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click" CausesValidation="False">Logout</asp:LinkButton>
                     </div>
                 </LoggedInTemplate>
                 <RoleGroups>
                     <asp:RoleGroup Roles="admin">
                         <ContentTemplate>
                             <div class="d-flex">
-                                <asp:LinkButton CssClass="mr-5" ID="lbAdmin" runat="server">Admin</asp:LinkButton>
-                                <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
-                                <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click">Logout</asp:LinkButton>
+                                <asp:LinkButton CssClass="mr-5" ID="lbAdmin" runat="server" CausesValidation="False">Admin</asp:LinkButton>
+                                <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server" CausesValidation="False"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
+                                <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click" CausesValidation="False">Logout</asp:LinkButton>
                             </div>
                         </ContentTemplate>
                     </asp:RoleGroup>

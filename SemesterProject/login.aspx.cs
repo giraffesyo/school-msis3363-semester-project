@@ -15,7 +15,11 @@ namespace SemesterProject
         private SqlConnection myConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["F18_ksmmcquadConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Redirect logged in users to the portal page
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/clients.aspx");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

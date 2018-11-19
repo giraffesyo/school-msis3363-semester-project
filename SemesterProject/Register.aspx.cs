@@ -20,9 +20,15 @@ namespace SemesterProject
         private SqlConnection myConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["F18_ksmmcquadConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            //If we're authenticated, go to clients page (shouldnt be on registration)
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/clients.aspx");
+            }
+
+            // If we didn't choose a company go back to the choose company page
             if (Session["ChosenCompany"] == null)
             {
-                // If we didn't choose a company go back to the choose company page
                 Response.Redirect("~/ChooseCompany.aspx");
             }
             else
@@ -132,7 +138,7 @@ namespace SemesterProject
 
             //successfull response redirect
             Response.Redirect("~/clients.aspx");
-            }
+        }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {

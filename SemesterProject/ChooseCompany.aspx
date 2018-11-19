@@ -2,7 +2,7 @@
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div>
-        <div class="register">
+        <div class="Settings">
             <h1>Select your company</h1>
 
             <img src="images/logo.png" alt="CTS Logo" />

@@ -212,23 +212,23 @@
 
 /* Register page styles*/
 
-.register {
+.Settings {
     display: flex;
     flex-direction: column;
 }
 
-    .register img {
+    .Settings img {
         flex-basis: 100%;
         max-width: 450px;
         align-self: center;
     }
 
-    .register h1 {
+    .Settings h1 {
         text-align: center;
     }
 
 
-    .register .form {
+    .Settings .form {
         display: flex;
         flex-wrap: wrap;
         max-width: 50%;
@@ -236,7 +236,7 @@
     }
 
 
-    .register .form-group {
+    .Settings .form-group {
         flex-basis: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -245,18 +245,18 @@
         align-items: center;
     }
 
-.reigster label {
+.Settings label {
     line-height: 1.5;
 }
 
 
 @media screen and (max-width: 576px) {
 
-    .register img {
+    .Settings img {
         max-width: 300px;
     }
 
-    .register .form {
+    .Settings .form {
         max-width: 100%;
         margin: 0;
     }
