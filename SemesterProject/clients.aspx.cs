@@ -50,6 +50,8 @@ namespace SemesterProject
                         iframe.Src = link;
                         // Add bootstrap classes
                         iframe.Attributes["class"] = "embed-responsive-item";
+                        //allow full screen
+                        iframe.Attributes.Add("allowFullScreen", "true");
                         //Add our iframe to our wrapper
                         iframeWrapper.Controls.Add(iframe);
                         //Add our iframe wrapper to our video container
