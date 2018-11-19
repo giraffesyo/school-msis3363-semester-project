@@ -271,6 +271,6 @@
 }
 @media screen and (min-width: 576px) {
     #BodyPlaceholder_VideoContainer .iframe-wrapper {
-        margin: 0rem 1rem;
+        margin: 1rem 1rem;
     }
 }
