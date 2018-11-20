@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 namespace SemesterProject
 {
@@ -85,6 +86,12 @@ namespace SemesterProject
             {
                 //get the values from the form
                 String email = tbEmail.Text;
+                // ensure the user doesn't already exist
+                if (!UserManager.checkEmail(email))
+                {
+                    // TODO: set some label on the page telling the error
+                    return;
+                }
                 // Hash our passowrd
                 String password = Password.HashPassword(tbPassword.Text);
                 String first = tbFirstName.Text;
@@ -93,51 +100,16 @@ namespace SemesterProject
                 String title = tbTitle.Text;
                 String department = tbDepartment.Text;
                 bool newsletter = cbNewsletter.Checked;
-                // Create SQL connection
-                myConnection.Open();
-                // Create query
-                const String query = "INSERT INTO users (email, password, firstName, lastName, phone, companyId, title, department, newsletter) VALUES (@email, @password, @firstName, @lastName, @phone, @companyId, @title, @department, @newsletter); SELECT SCOPE_IDENTITY()";
-                // Create Insert Command
-                SqlCommand InsertUserCommand = new SqlCommand(query, myConnection);
-                // Add our parameters
-                SqlParameterCollection Parameters = InsertUserCommand.Parameters;
-                Parameters.AddWithValue("@email", email);
-                Parameters.AddWithValue("@password", password);
-                Parameters.AddWithValue("@firstName", first);
-                Parameters.AddWithValue("@lastName", last);
-                Parameters.AddWithValue("@phone", phone);
-                Parameters.AddWithValue("@companyId", ChosenCompanyId);
-                Parameters.AddWithValue("@title", title);
-                Parameters.AddWithValue("@department", department);
-                Parameters.AddWithValue("@newsletter", newsletter);
-                // Execute command, creating the user, returns the id
-                Int32 UserId = Convert.ToInt32(InsertUserCommand.ExecuteScalar());
-                // Define the insert query for user interests
-                const String userInterestsQuery = "INSERT INTO userInterests (userId, videoTopicId) VALUES (@userId, @videoTopicId);";
-                // Handle the user video interests preferences
-                foreach (ListItem item in cblTrainingPreferences.Items)
+                int UserId = UserManager.RegisterUser(email, password, first, last, phone, ChosenCompanyId, title, department, newsletter, cblTrainingPreferences);
+                //If UserId != -1 then we succesfully registered
+                if (UserId != -1)
                 {
-                    // only insert if the item is checked
-                    if (item.Selected)
-                    {
-                        String selectedValue = item.Value;
-                        // Create the sql command with our current connection and the above insert query
-                        SqlCommand InsertUserInterests = new SqlCommand(userInterestsQuery, myConnection);
-                        // Get our parameter list
-                        SqlParameterCollection userInterestParameters = InsertUserInterests.Parameters;
-                        // Add this user to query
-                        userInterestParameters.AddWithValue("@userId", UserId);
-                        // Add the selected value ( checked box) to the query
-                        userInterestParameters.AddWithValue("@videoTopicId", selectedValue);
-                        InsertUserInterests.ExecuteScalar();
-                    }
+                    //successfull response redirect
+                    FormsAuthentication.SetAuthCookie(email, true);
+                    Response.Redirect("~/clients.aspx");
                 }
-                //Close our sql connection
-                myConnection.Close();
             }
 
-            //successfull response redirect
-            Response.Redirect("~/clients.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

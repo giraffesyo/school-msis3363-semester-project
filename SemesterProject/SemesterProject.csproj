@@ -265,6 +265,7 @@
     <Compile Include="Team.aspx.designer.cs">
       <DependentUpon>Team.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserManager.cs" />
     <Compile Include="WithFooter.master.cs">
       <DependentUpon>WithFooter.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

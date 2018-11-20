@@ -56,7 +56,6 @@ namespace SemesterProject
                         iframeWrapper.Controls.Add(iframe);
                         //Add our iframe wrapper to our video container
                         VideoContainer.Controls.Add(iframeWrapper);
-                        System.Diagnostics.Debug.WriteLine(name + ", " + link);
                     }
                 }
                 catch (SqlException sex)

@@ -13,7 +13,7 @@ namespace SemesterProject
         protected void Page_Load(object sender, EventArgs e)
         {
             // Redirect logged in users to the portal page
-            if (!User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/clients.aspx");
             }
