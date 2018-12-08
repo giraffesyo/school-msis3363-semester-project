@@ -100,6 +100,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin.aspx" />
     <Content Include="ChooseCompany.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\loader.gif" />
@@ -198,6 +199,13 @@
     <Content Include="scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ChooseCompany.aspx.cs">
       <DependentUpon>ChooseCompany.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
