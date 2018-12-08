@@ -64,7 +64,6 @@ namespace SemesterProject
                         div.InnerHtml = "Please choose some topics that interest you in the&nbsp;<a href='preferences.aspx'>preferences</a>&nbsp;page in order to see content here";
                         VideoContainer.Controls.Add(div);
                     }
-                    System.Diagnostics.Debug.WriteLine("Count: " + VideoContainer.Controls.Count);
                 }
                 catch (SqlException sex)
                 {
