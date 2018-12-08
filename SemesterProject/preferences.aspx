@@ -7,6 +7,9 @@
         <div class="text-center">
             <h4>Update Preferences</h4>
         </div>
+        <div class="alert-container container">
+            <div runat="server" id="lblStatus"></div>
+        </div>
         <div class="form">
             <div class="form-group">
                 <label for="lblCompanyName">Company:</label>
@@ -63,5 +66,5 @@
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="ExtraScripts" runat="server">
-    <script src="scripts/phone.js" type="text/javascript" ></script>
+    <script src="scripts/phone.js" type="text/javascript"></script>
 </asp:Content>

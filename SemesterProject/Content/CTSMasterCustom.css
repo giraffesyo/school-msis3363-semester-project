@@ -245,12 +245,22 @@
         align-items: center;
     }
 
-.Settings label {
-    line-height: 1.5;
+    .Settings label {
+        line-height: 1.5;
+    }
+
+
+
+.alert-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-
 @media screen and (max-width: 576px) {
+
+
 
     .Settings img {
         max-width: 300px;
@@ -269,6 +279,7 @@
 #BodyPlaceholder_VideoContainer .iframe-wrapper {
     margin: 1rem 0rem;
 }
+
 @media screen and (min-width: 576px) {
     #BodyPlaceholder_VideoContainer .iframe-wrapper {
         margin: 1rem 1rem;

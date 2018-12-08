@@ -12,7 +12,7 @@ namespace SemesterProject
     public partial class preferences : System.Web.UI.Page
     {
         // user id is set on page load using User.Identity.Name in our select statement
-        private int userid;
+        private static int userid;
         private SqlConnection myConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["F18_ksmmcquadConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -106,8 +106,21 @@ namespace SemesterProject
 
             // call the update function with the information gathered from the form
             int updateResponse = UserManager.updateUser(userid, User.Identity.Name, formEmail, formFirstName, formLastName, formPhoneNumber, formJobTitle, formDepartment, formNewsletter, cblTrainingPreferences);
-            System.Diagnostics.Debug.WriteLine("Update response: " + updateResponse);
-            //Response.Redirect("~/clients.aspx");
+            if (updateResponse == UserManager.SUCCESS)
+            {
+                lblStatus.Attributes.Add("class", "alert alert-success");
+                lblStatus.InnerText = "Successfully updated your preferences!";
+            }
+            else if (updateResponse == UserManager.EMAIL_IN_USE)
+            {
+                lblStatus.Attributes.Add("class", "alert alert-danger");
+                lblStatus.InnerText = "That email is already in use by someone else.";
+            }
+            else
+            {
+                lblStatus.Attributes.Add("class", "alert alert-danger");
+                lblStatus.InnerText = "There was a problem updating your preferences, please try again.";
+            }
         }
 
         protected void cblTrainingPreferences_DataBound(object sender, EventArgs e)
