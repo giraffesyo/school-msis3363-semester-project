@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="ChooseCompany.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\loader.gif" />
     <Content Include="login.aspx" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />

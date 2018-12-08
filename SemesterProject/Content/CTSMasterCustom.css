@@ -285,3 +285,7 @@
         margin: 1rem 1rem;
     }
 }
+/* add loader to iframes */
+.iframe-wrapper {
+    background: url(../images/loader.gif) center center no-repeat;
+}
