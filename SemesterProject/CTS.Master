@@ -49,7 +49,7 @@
                                 <asp:HyperLink CssClass="nav-item nav-link" runat="server" NavigateUrl="~/clients.aspx">CLIENTS</asp:HyperLink>
                             </nav>
                             <div class="d-flex">
-                                <asp:LinkButton CssClass="mr-5" ID="lbAdmin" runat="server" CausesValidation="False">Admin</asp:LinkButton>
+                                <asp:LinkButton CssClass="mr-5" ID="lbAdmin" runat="server" OnClick="lbAdmin_Click" CausesValidation="False">Admin</asp:LinkButton>
                                 <asp:LinkButton ID="lbPreferences" OnClick="lbPreferences_Click" CssClass="mr-5" runat="server" CausesValidation="False"><i class="fa fa-wrench" aria-hidden="true"></i><span class="sr-only">Preferences</span></asp:LinkButton>
                                 <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click" CausesValidation="False">Logout</asp:LinkButton>
                             </div>

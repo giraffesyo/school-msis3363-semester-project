@@ -26,5 +26,10 @@ namespace SemesterProject
             //Redirect them to the home page
             Response.Redirect("~/Default.aspx");
         }
+
+        protected void lbAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/admin.aspx");
+        }
     }
 }
