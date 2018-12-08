@@ -20,6 +20,8 @@
                 <label for="tbFirstName">First Name:</label>
                 <asp:TextBox CssClass="form-control" ID="tbFirstName" runat="server" placeholder="Jane"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ErrorMessage="You must enter your first name." Display="Dynamic" ControlToValidate="tbFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
+                </div>
+            <div class="form-group">
                 <label for="tbLastName">Last Name: </label>
                 <asp:TextBox CssClass="form-control" ID="tbLastName" runat="server" placeholder="Doe"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvLastName" runat="server" ErrorMessage="You must enter your last name." ControlToValidate="tbLastName" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
