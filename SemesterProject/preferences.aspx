@@ -17,12 +17,6 @@
                 <asp:RegularExpressionValidator ID="regexEmail" runat="server" ErrorMessage="You must enter a valid email." ControlToValidate="tbEmail" Display="Dynamic" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             </div>
             <div class="form-group">
-                <label for="tbPassword">Password: </label>
-                <asp:TextBox ID="tbPassword" CssClass="form-control" type="password" runat="server" placeholder="Secur3P4SS"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="You must enter a password." ControlToValidate="tbPassword" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="regexPassword" runat="server" ErrorMessage="Password must contain 1 uppercase letter, 1 lowercase letter, 1 number, and be 8-15 characters long." ControlToValidate="tbPassword" Display="Dynamic" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$" ForeColor="Red"></asp:RegularExpressionValidator>
-            </div>
-            <div class="form-group">
                 <label for="tbFirstName">First Name:</label>
                 <asp:TextBox CssClass="form-control" ID="tbFirstName" runat="server" placeholder="Jane"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ErrorMessage="You must enter your first name." Display="Dynamic" ControlToValidate="tbFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -34,7 +28,7 @@
                 <label for="tbPhoneNumber">Phone Number:</label>
                 <asp:TextBox ID="tbPhoneNumber" CssClass="form-control" runat="server" placeholder="918-512-8989"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server" ErrorMessage="You must enter your phone number." ControlToValidate="tbPhoneNumber" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="regexPhoneNumber" runat="server" ErrorMessage="You must enter a valid phone number." ControlToValidate="tbPhoneNumber" ForeColor="Red" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="regexPhoneNumber" runat="server" ErrorMessage="You must enter a valid phone number." ControlToValidate="tbPhoneNumber" ForeColor="Red" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
             <div class="form-group">
                 <label for="tbTitle">Job Title</label>
