@@ -209,6 +209,18 @@
     justify-content: center;
     height: 80vh;
 }
+/* admin page styles*/
+
+.administration {
+    display: flex;
+    flex-direction: column;
+}
+
+.administration img.logo {
+    flex-basis: 100%;
+    max-width: 450px;
+    align-self: center;
+}
 
 /* Register page styles*/
 
@@ -261,7 +273,9 @@
 @media screen and (max-width: 576px) {
 
 
-
+    .administration img.logo {
+        max-width: 300px;
+    }
     .Settings img {
         max-width: 300px;
     }
