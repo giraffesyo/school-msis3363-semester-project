@@ -2,8 +2,11 @@
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div class="Settings">
-        <h4>Update Preferences</h4>
         <img src="images/logo.png" alt="CTS Logo" />
+
+        <div class="text-center">
+            <h4>Update Preferences</h4>
+        </div>
         <div class="form">
             <div class="form-group">
                 <label for="lblCompanyName">Company:</label>
@@ -20,7 +23,7 @@
                 <label for="tbFirstName">First Name:</label>
                 <asp:TextBox CssClass="form-control" ID="tbFirstName" runat="server" placeholder="Jane"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ErrorMessage="You must enter your first name." Display="Dynamic" ControlToValidate="tbFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
-                </div>
+            </div>
             <div class="form-group">
                 <label for="tbLastName">Last Name: </label>
                 <asp:TextBox CssClass="form-control" ID="tbLastName" runat="server" placeholder="Doe"></asp:TextBox>

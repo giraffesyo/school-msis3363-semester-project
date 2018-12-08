@@ -7,7 +7,6 @@
                 <h2>Welcome to the client center.</h2>
             </div>
         </div>
-        <div class="row justify-content-center videos d-flex flex-row flex-wrap" runat="server" id="VideoContainer">
-        </div>
+        <div class="row justify-content-center videos d-flex flex-row flex-wrap" runat="server" id="VideoContainer"></div>
     </div>
 </asp:Content>

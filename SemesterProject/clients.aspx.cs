@@ -57,6 +57,14 @@ namespace SemesterProject
                         //Add our iframe wrapper to our video container
                         VideoContainer.Controls.Add(iframeWrapper);
                     }
+                    // there will be no controls in the video container if the user has no preferences set, so we can display a message telling them to set some. 
+                    if(VideoContainer.Controls.Count == 0)
+                    {
+                        var div = new HtmlElement();
+                        div.InnerHtml = "Please choose some topics that interest you in the&nbsp;<a href='preferences.aspx'>preferences</a>&nbsp;page in order to see content here";
+                        VideoContainer.Controls.Add(div);
+                    }
+                    System.Diagnostics.Debug.WriteLine("Count: " + VideoContainer.Controls.Count);
                 }
                 catch (SqlException sex)
                 {
