@@ -70,3 +70,6 @@
         </div>
     </div>
 </asp:Content>
+<asp:Content ContentPlaceHolderID="ExtraScripts" runat="server">
+    <script src="scripts/phone.js" type="text/javascript" ></script>
+</asp:Content>

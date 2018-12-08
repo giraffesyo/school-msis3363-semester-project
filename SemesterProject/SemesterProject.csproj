@@ -135,6 +135,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="scripts\phone.js" />
     <Content Include="WithFooter.master" />
   </ItemGroup>
   <ItemGroup>
