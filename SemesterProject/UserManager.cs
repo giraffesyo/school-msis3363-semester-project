@@ -11,6 +11,12 @@ namespace SemesterProject
     //This class provides methods to modify users
     public class UserManager
     {
+
+        public const int SUCCESS = 1;
+        public const int GENERAL_FAILURE = -1;
+        public const int SQL_FAILURE = -2;
+        public const int EMAIL_IN_USE = -3;
+
         private static SqlConnection CTSDatabase = new SqlConnection(ConfigurationManager.ConnectionStrings["F18_ksmmcquadConnectionString"].ConnectionString);
 
         ///<summary>Returns true if this email is OK to use</summary>
@@ -114,16 +120,23 @@ namespace SemesterProject
 
             }
             // bad value means that registration failed
-            return -1;
+            return GENERAL_FAILURE;
         }
 
 
-        public static void updateUser(int id, string email, string firstName, string lastName, string phone, int companyId, string title, string department, bool newsletter)
+        public static int updateUser(int id, string currentEmail, string email, string firstName, string lastName, string phone, string title, string department, bool newsletter, CheckBoxList cblTrainingPreferences)
         {
+            // first check that the email that we're changing to is not in use
+            // the checkemail call is intentionally on the right side for short circuit evaluation (only called if usernames arent equal)
+            if(currentEmail != email && !checkEmail(email))
+            {
+                return EMAIL_IN_USE;
+            }
+
             try
             {
                 // create update query string
-                string UpdateUserQuery = "UPDATE users SET (email, firstName, lastName, phone, title, department, newsletter) VALUES (@email, @firstName, @lastName, @phone, @title, @department, @newsletter) WHERE id = @userId;";
+                string UpdateUserQuery = "UPDATE users SET email = @email, firstName = @firstName, lastName = @lastName, phone = @phone, title = @title, department = @department, newsletter = @newsletter WHERE id = @userId;";
                 //instantiate command with above query and our database as its connection
                 SqlCommand UpdateUserCommand = new SqlCommand(UpdateUserQuery, CTSDatabase);
                 SqlParameterCollection parameters = UpdateUserCommand.Parameters;
@@ -135,10 +148,21 @@ namespace SemesterProject
                 parameters.AddWithValue("@title", title);
                 parameters.AddWithValue("@department", department);
                 parameters.AddWithValue("@newsletter", newsletter);
+                parameters.AddWithValue("@userId", id);
                 // Open connection
                 CTSDatabase.Open();
                 //Execute command
-                UpdateUserCommand.ExecuteNonQuery();
+                int rowsAffected = UpdateUserCommand.ExecuteNonQuery();
+                CTSDatabase.Close();
+                if( rowsAffected == 1 )
+                {
+                    // we successfully updated the users profile
+                    return SUCCESS;
+                } else
+                {
+                    System.Diagnostics.Debug.WriteLine("Rows affected was: " + rowsAffected);
+                    return GENERAL_FAILURE;
+                }
             }
             catch (SqlException sex)
             {
@@ -158,6 +182,7 @@ namespace SemesterProject
                 CTSDatabase.Close();
 
             }
+            return GENERAL_FAILURE;
         }
     }
 }
