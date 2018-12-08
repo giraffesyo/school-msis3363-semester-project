@@ -22,14 +22,15 @@ namespace SemesterProject
 
 
         SqlConnection CTSDatabase = new SqlConnection(ConfigurationManager.ConnectionStrings["F18_ksmmcquadConnectionString"].ConnectionString);
-        // create a list of companies, with initial capacity of 100 (it autoexpands if needed)
-        List<Company> companies = new List<Company>(100);
+        // create a list of companies
+        static List<Company> companies;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Initialize companies to list of 100 initial capacity, expands if necessary automatically
+            companies = new List<Company>(100);
             // Load companies into our companies list and populate our table
             LoadCompanies();
-
         }
 
 
@@ -46,6 +47,8 @@ namespace SemesterProject
                 // execute our query, which returns a reader holding our results
                 SqlDataReader reader = selectCompaniesCommand.ExecuteReader();
                 // Go through all elements of the buffer, adding them to an array
+                // Create index for use on buttons to reference our company list elements
+                int index = 0;
                 while (reader.Read())
                 {
                     Company company;
@@ -78,12 +81,19 @@ namespace SemesterProject
                     lbEdit.Attributes.Add("class", "fa fa-pencil");
 
                     // Add data attributes to identify the buttons
-                    lbUser.Attributes.Add("data-id", company.id.ToString());
-                    lbEdit.Attributes.Add("data-id", company.id.ToString());
+                    lbUser.Attributes.Add("data-index", index.ToString());
+                    lbEdit.Attributes.Add("data-index", index.ToString());
+
+                    // Add data attributes necessary for bootstrap modal
+                    //lbUser.Attributes.Add("data-toggle", "modal");
+                    //lbUser.Attributes.Add("data-target", "#adminModal");
+                    //lbEdit.Attributes.Add("data-toggle", "modal");
+                    //lbEdit.Attributes.Add("data-target", "#adminModal");
 
                     // Add event listeners 
                     lbUser.Click += new EventHandler(this.viewUsersClicked);
-                    lbEdit.Click += new EventHandler(this.editUserClicked);
+                    lbEdit.Click += new EventHandler(this.editCompanyClicked);
+
 
                     // Add buttons to cells
                     employeesCell.Controls.Add(lbUser);
@@ -97,6 +107,9 @@ namespace SemesterProject
 
                     // Add row to table
                     companiesTable.Rows.Add(row);
+
+                    //increment index
+                    index++;
                 }
             }
             catch (SqlException sex)
@@ -110,17 +123,30 @@ namespace SemesterProject
             }
         }
 
-        protected void editUserClicked(object sender, EventArgs e)
+        protected void editCompanyClicked(object sender, EventArgs e)
         {
-            LinkButton btn = (LinkButton)sender;
-            System.Diagnostics.Debug.WriteLine(btn.Attributes["data-id"].ToString());
 
+
+            System.Diagnostics.Debug.WriteLine("test");
+            LinkButton btn = (LinkButton)sender;
+            int index = Convert.ToInt32(btn.Attributes["data-index"]);
+            Company company = companies[index];
+            adminModalTitle.Text = $"Editing {company.name}";
+            tbCompanyName.Text = company.name;
+            tbEmployeeCount.Text = company.count.ToString();
+            ScriptManager.RegisterStartupScript(adminModalUpdatePanel, adminModalUpdatePanel.GetType(), "show", "$(function () { $('#adminModal').modal('show'); });", true);
+            adminModalUpdatePanel.Update();
         }
 
         protected void viewUsersClicked(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            System.Diagnostics.Debug.WriteLine(btn.Attributes["data-id"].ToString());
+            Session[""] = Convert.ToInt32(btn.Attributes["data-index"]);
+        }
+
+        protected void btnModalClose_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

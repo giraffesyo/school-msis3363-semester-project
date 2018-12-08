@@ -216,11 +216,11 @@
     flex-direction: column;
 }
 
-.administration img.logo {
-    flex-basis: 100%;
-    max-width: 450px;
-    align-self: center;
-}
+    .administration img.logo {
+        flex-basis: 100%;
+        max-width: 450px;
+        align-self: center;
+    }
 
 /* Register page styles*/
 
@@ -276,6 +276,7 @@
     .administration img.logo {
         max-width: 300px;
     }
+
     .Settings img {
         max-width: 300px;
     }
@@ -303,3 +304,4 @@
 .iframe-wrapper {
     background: url(../images/loader.gif) center center no-repeat;
 }
+

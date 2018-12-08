@@ -14,6 +14,8 @@
 </head>
 <body>
     <form id="CTSForm" runat="server">
+        <%-- Script manager  --%>
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
         <%-- Header, using responsive bootstrap classes to expand and collapse --%>
         <div class="navbar">
             <a class="brand" href="/Default.aspx">CTS</a>
