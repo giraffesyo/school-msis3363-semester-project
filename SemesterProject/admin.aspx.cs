@@ -27,8 +27,6 @@ namespace SemesterProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Initialize companies to list of 100 initial capacity, expands if necessary automatically
-            companies = new List<Company>(100);
             // Load companies into our companies list and populate our table
             LoadCompanies();
         }
@@ -36,6 +34,8 @@ namespace SemesterProject
 
         private void LoadCompanies()
         {
+            // Initialize companies to list of 100 initial capacity, expands if necessary automatically
+            companies = new List<Company>(100);
             try
             {
                 //create the query string
@@ -84,12 +84,6 @@ namespace SemesterProject
                     lbUser.Attributes.Add("data-index", index.ToString());
                     lbEdit.Attributes.Add("data-index", index.ToString());
 
-                    // Add data attributes necessary for bootstrap modal
-                    //lbUser.Attributes.Add("data-toggle", "modal");
-                    //lbUser.Attributes.Add("data-target", "#adminModal");
-                    //lbEdit.Attributes.Add("data-toggle", "modal");
-                    //lbEdit.Attributes.Add("data-target", "#adminModal");
-
                     // Add event listeners 
                     lbUser.Click += new EventHandler(this.viewUsersClicked);
                     lbEdit.Click += new EventHandler(this.editCompanyClicked);
@@ -125,28 +119,72 @@ namespace SemesterProject
 
         protected void editCompanyClicked(object sender, EventArgs e)
         {
-
-
-            System.Diagnostics.Debug.WriteLine("test");
+            // Cast the sender as link button
             LinkButton btn = (LinkButton)sender;
+
+            // Get index from the link button (index correpsonds to our companies list)
             int index = Convert.ToInt32(btn.Attributes["data-index"]);
+            // get the company from companies list using the index
             Company company = companies[index];
+            // Set modal title
             adminModalTitle.Text = $"Editing {company.name}";
+            // Set form values
             tbCompanyName.Text = company.name;
             tbEmployeeCount.Text = company.count.ToString();
+            // set hidden value to company index
+            hiddenCompanyIndex.Value = index.ToString();
+            // Register script manager to show the modal with the updated values
             ScriptManager.RegisterStartupScript(adminModalUpdatePanel, adminModalUpdatePanel.GetType(), "show", "$(function () { $('#adminModal').modal('show'); });", true);
             adminModalUpdatePanel.Update();
         }
 
         protected void viewUsersClicked(object sender, EventArgs e)
         {
+            // go to edit users page
             LinkButton btn = (LinkButton)sender;
-            Session[""] = Convert.ToInt32(btn.Attributes["data-index"]);
+            //Session[""] = Convert.ToInt32(btn.Attributes["data-index"]);
         }
 
         protected void btnModalClose_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void adminModalSave_Click(object sender, EventArgs e)
+        {
+            // Show alert if either field is blank
+            if (string.IsNullOrWhiteSpace(tbCompanyName.Text) || string.IsNullOrWhiteSpace(tbEmployeeCount.Text))
+            {
+                adminModalAlert.Attributes["class"] = "alert alert-danger";
+                adminModalAlert.InnerText = "You must enter a value for both fields.";
+                return;
+            }
+
+            int companyIndex = Convert.ToInt32(hiddenCompanyIndex.Value);
+            Company company = companies[companyIndex];
+            string name = tbCompanyName.Text;
+            int count = Convert.ToInt32(tbEmployeeCount.Text);
+
+            int result = CompanyManager.UpdateCompany(company.id, count, name);
+            if (result == CompanyManager.SUCCESS)
+            {
+                // Update our local record
+                company.name = name;
+                company.count = count;
+                // Update the Table, +1 to account for the header
+                companiesTable.Rows[companyIndex + 1].Cells[1].Text = company.name;
+                companiesTable.Rows[companyIndex + 1].Cells[1].Text = company.count.ToString();
+                // Refresh the UpdatePanel
+                tableUpdatePanel.Update();
+                // Hide the modal
+                ScriptManager.RegisterStartupScript(tableUpdatePanel, tableUpdatePanel.GetType(), "hide", "$(function () { $('#adminModal').modal('hide'); });", true);
+
+            }
+            else
+            {
+                // do something else
+                System.Diagnostics.Debug.WriteLine("We Failed");
+            }
         }
     }
 }

@@ -213,6 +213,7 @@
     <Compile Include="ChooseCompany.aspx.designer.cs">
       <DependentUpon>ChooseCompany.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CompanyManager.cs" />
     <Compile Include="CTSRoleProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

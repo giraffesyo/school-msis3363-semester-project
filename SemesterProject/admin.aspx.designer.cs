@@ -49,6 +49,15 @@ namespace SemesterProject {
         protected global::System.Web.UI.WebControls.Label adminModalTitle;
         
         /// <summary>
+        /// hiddenCompanyIndex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hiddenCompanyIndex;
+        
+        /// <summary>
         /// tbCompanyName control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace SemesterProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbEmployeeCount;
+        
+        /// <summary>
+        /// adminModalAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminModalAlert;
         
         /// <summary>
         /// adminModalSave control.
