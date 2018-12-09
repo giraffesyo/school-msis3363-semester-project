@@ -148,8 +148,9 @@
 
 
     .footer li {
-        margin: 1rem 0;
+       margin: 1rem 0;
     }
+    
 
 .sitemap {
     margin: auto 0;
@@ -288,6 +289,10 @@
 
     .form-group {
         margin: 0.5rem;
+    }
+
+    .footer li {
+        font-size: 1rem;
     }
 }
 /* clients page*/

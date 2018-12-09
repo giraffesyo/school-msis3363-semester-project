@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
+    <Content Include="adminadduser.aspx" />
     <Content Include="adminEmployees.aspx" />
     <Content Include="ChooseCompany.aspx" />
     <Content Include="edituser.aspx" />
@@ -207,6 +208,13 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminadduser.aspx.cs">
+      <DependentUpon>adminadduser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminadduser.aspx.designer.cs">
+      <DependentUpon>adminadduser.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminEmployees.aspx.cs">
       <DependentUpon>adminEmployees.aspx</DependentUpon>

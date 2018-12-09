@@ -171,6 +171,15 @@ namespace SemesterProject
             Response.Redirect("~/edituser.aspx");
         }
 
+        protected void lbAddUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adminadduser.aspx");
+        }
+        protected void lbReturnToCompanies_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/admin.aspx");
+        }
+
         protected void deleteEmployeeClicked(object sender, EventArgs e)
         {
             // Cast the sender as link button
@@ -188,8 +197,9 @@ namespace SemesterProject
             // Register script manager to show the modal
             ScriptManager.RegisterStartupScript(deleteEmployeeUpdatePanel, deleteEmployeeUpdatePanel.GetType(), "showDelete", "$(function () { $('#deleteEmployeeModal').modal('show'); });", true);
             deleteEmployeeUpdatePanel.Update();
-
         }
+
+
 
         protected void deleteEmployeeConfirmed(object sender, EventArgs e)
         {

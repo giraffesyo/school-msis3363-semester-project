@@ -54,26 +54,46 @@ namespace SemesterProject
             return false;
         }
 
-        public static int RegisterUser(string email, string password, string first, string last, string phone, int ChosenCompanyId, string title, string department, bool newsletter, CheckBoxList cblTrainingPreferences)
-        {
-            try
-            {
 
+        public static int RegisterUser(string email, string password, string first, string last, string phone, int ChosenCompanyId, string title, string department, bool newsletter, bool? administrator, CheckBoxList cblTrainingPreferences)
+        {
+            SqlCommand InsertUserCommand;
+            SqlParameterCollection Parameters;
+
+            // first check if we are registering this with an administrator account
+            if (administrator == null)
+            {
                 // Create query
                 const String query = "INSERT INTO users (email, password, firstName, lastName, phone, companyId, title, department, newsletter) VALUES (@email, @password, @firstName, @lastName, @phone, @companyId, @title, @department, @newsletter); SELECT SCOPE_IDENTITY()";
                 // Create Insert Command
-                SqlCommand InsertUserCommand = new SqlCommand(query, CTSDatabase);
-                // Add our parameters
-                SqlParameterCollection Parameters = InsertUserCommand.Parameters;
-                Parameters.AddWithValue("@email", email.ToLower());
-                Parameters.AddWithValue("@password", password);
-                Parameters.AddWithValue("@firstName", first);
-                Parameters.AddWithValue("@lastName", last);
-                Parameters.AddWithValue("@phone", phone);
-                Parameters.AddWithValue("@companyId", ChosenCompanyId);
-                Parameters.AddWithValue("@title", title);
-                Parameters.AddWithValue("@department", department);
-                Parameters.AddWithValue("@newsletter", newsletter);
+                InsertUserCommand = new SqlCommand(query, CTSDatabase);
+                Parameters = InsertUserCommand.Parameters;
+
+            }
+            else
+            {
+                // Create query
+                const String query = "INSERT INTO users (email, password, firstName, lastName, phone, companyId, title, department, newsletter, administrator) VALUES (@email, @password, @firstName, @lastName, @phone, @companyId, @title, @department, @newsletter, @administrator); SELECT SCOPE_IDENTITY()";
+                // Create Insert Command
+                InsertUserCommand = new SqlCommand(query, CTSDatabase);
+                Parameters = InsertUserCommand.Parameters;
+                Parameters.AddWithValue("@administrator", administrator);
+            }
+
+            // Add our parameters
+            Parameters.AddWithValue("@email", email.ToLower());
+            Parameters.AddWithValue("@password", password);
+            Parameters.AddWithValue("@firstName", first);
+            Parameters.AddWithValue("@lastName", last);
+            Parameters.AddWithValue("@phone", phone);
+            Parameters.AddWithValue("@companyId", ChosenCompanyId);
+            Parameters.AddWithValue("@title", title);
+            Parameters.AddWithValue("@department", department);
+            Parameters.AddWithValue("@newsletter", newsletter);
+
+            try
+            {
+
                 // Create SQL connection
                 CTSDatabase.Open();
                 // Execute command, creating the user, returns the id
@@ -104,6 +124,13 @@ namespace SemesterProject
             }
             // bad value means that registration failed
             return GENERAL_FAILURE;
+
+        }
+
+        // Overload register user for normal registration (registration page for users)
+        public static int RegisterUser(string email, string password, string first, string last, string phone, int ChosenCompanyId, string title, string department, bool newsletter, CheckBoxList cblTrainingPreferences)
+        {
+            return RegisterUser(email, password, first, last, phone, ChosenCompanyId, title, department, newsletter, null, cblTrainingPreferences);
         }
 
         public static int DeleteUser(int userId)

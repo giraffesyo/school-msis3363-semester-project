@@ -26,6 +26,18 @@
                         </asp:Table>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+                <div class="row">
+                    <div class="col">
+                        <asp:LinkButton ID="lbReturnToCompanies" OnClick="lbReturnToCompanies_Click" runat="server">
+                            <i class="fa fa-arrow-circle-left"></i> Return to Companies
+                        </asp:LinkButton>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <asp:LinkButton ID="lbAddUser" OnClick="lbAddUser_Click" runat="server">
+                            <i class="fa fa-plus-circle"></i> Add User
+                        </asp:LinkButton>
+                    </div>
+                </div>
             </div>
         </div>
 

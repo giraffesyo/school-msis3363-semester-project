@@ -49,6 +49,24 @@ namespace SemesterProject {
         protected global::System.Web.UI.WebControls.Table employeesTable;
         
         /// <summary>
+        /// lbReturnToCompanies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbReturnToCompanies;
+        
+        /// <summary>
+        /// lbAddUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbAddUser;
+        
+        /// <summary>
         /// deleteEmployeeUpdatePanel control.
         /// </summary>
         /// <remarks>
