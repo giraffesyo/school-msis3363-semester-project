@@ -17,7 +17,7 @@ namespace SemesterProject
         string companyName;
         List<Employee> employees;
 
-        struct Employee
+        public struct Employee
         {
             public int id;
             public string email;
@@ -157,7 +157,6 @@ namespace SemesterProject
                 System.Diagnostics.Debug.WriteLine("General Exception: " + ex.Message);
             }
         }
-
         protected void editEmployeeClicked(object sender, EventArgs e)
         {
             // Cast the sender as link button
@@ -166,18 +165,12 @@ namespace SemesterProject
             int index = Convert.ToInt32(btn.Attributes["data-index"]);
             // get the employee from the employees list using the index
             Employee employee = employees[index];
-            /*// Set modal title
-            editCompanyTitle.Text = $"Editing {company.name}";
-            // Set form values
-            tbCompanyName.Text = company.name;
-            tbEmployeeCount.Text = company.count.ToString();
-            // set hidden value to company index
-            hiddenCompanyIndex.Value = index.ToString();
-            // Register script manager to show the modal with the updated values
-            ScriptManager.RegisterStartupScript(editCompanyUpdatePanel, editCompanyUpdatePanel.GetType(), "show", "$(function () { $('#editCompanyModal').modal('show'); });", true);
-            editCompanyUpdatePanel.Update();
-        */
+            // save employee to session 
+            Session["managingEmployee"] = employee;
+            // redirect administrator to the edit user page
+            Response.Redirect("~/edituser.aspx");
         }
+
         protected void deleteEmployeeClicked(object sender, EventArgs e)
         {
             // Cast the sender as link button
@@ -193,7 +186,7 @@ namespace SemesterProject
             // set hidden value to employee's index in Employees List
             hiddenEmployeeIndex.Value = index.ToString();
             // Register script manager to show the modal
-            ScriptManager.RegisterStartupScript(deleteEmployeeUpdatePanel, deleteEmployeeUpdatePanel.GetType(), "show", "$(function () { $('#deleteEmployeeModal').modal('show'); });", true);
+            ScriptManager.RegisterStartupScript(deleteEmployeeUpdatePanel, deleteEmployeeUpdatePanel.GetType(), "showDelete", "$(function () { $('#deleteEmployeeModal').modal('show'); });", true);
             deleteEmployeeUpdatePanel.Update();
 
         }
@@ -215,7 +208,7 @@ namespace SemesterProject
                 // Refresh the Update Panel
                 tableUpdatePanel.Update();
                 // Hide modal
-                ScriptManager.RegisterStartupScript(tableUpdatePanel, tableUpdatePanel.GetType(), "hide", "$(function () { $('#deleteEmployeeModal').modal('hide'); });", true);
+                ScriptManager.RegisterStartupScript(tableUpdatePanel, tableUpdatePanel.GetType(), "hideDelete", "$(function () { $('#deleteEmployeeModal').modal('hide'); });", true);
             }
             else
             {

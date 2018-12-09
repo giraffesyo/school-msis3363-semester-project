@@ -28,35 +28,36 @@
                 </asp:UpdatePanel>
             </div>
         </div>
-    </div>
-    <!-- Delete Employees Modal is hidden until opened from the table -->
-    <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <asp:UpdatePanel ID="deleteEmployeeUpdatePanel" UpdateMode="Conditional" runat="server">
-                    <ContentTemplate>
-                        <div class="modal-header">
-                            <h5 class="modal-title">
-                                <asp:Label runat="server" Text="" ID="deleteEmployeeTitle"></asp:Label>
-                            </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" id="deleteEmployeeBody">
-                            <asp:HiddenField ID="hiddenEmployeeIndex" runat="server" />
-                            <div class="row">
-                                <div class="col">
-                                    <asp:Label ID="lblDeleteEmployeeBody" runat="server" Text=""></asp:Label>
+
+        <!-- Delete Employees Modal is hidden until opened from the table -->
+        <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteEmployeeTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <asp:UpdatePanel ID="deleteEmployeeUpdatePanel" UpdateMode="Conditional" runat="server">
+                        <ContentTemplate>
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    <asp:Label runat="server" Text="" ID="deleteEmployeeTitle"></asp:Label>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="deleteEmployeeBody">
+                                <asp:HiddenField ID="hiddenEmployeeIndex" runat="server" />
+                                <div class="row">
+                                    <div class="col">
+                                        <asp:Label ID="lblDeleteEmployeeBody" runat="server" Text=""></asp:Label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="alert alert-danger" visible="false" runat="server" id="deleteEmployeeModalAlert"></div>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <asp:Button runat="server" OnClick="deleteEmployeeConfirmed" type="button" CssClass="btn btn-danger" Text="Delete account"></asp:Button>
-                            </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                                <div class="modal-footer">
+                                    <div class="alert alert-danger" visible="false" runat="server" id="deleteEmployeeModalAlert"></div>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <asp:Button runat="server" OnClick="deleteEmployeeConfirmed" type="button" CssClass="btn btn-danger" Text="Delete account"></asp:Button>
+                                </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
             </div>
 
         </div>
