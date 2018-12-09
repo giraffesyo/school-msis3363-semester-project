@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
+    <Content Include="adminEmployees.aspx" />
     <Content Include="ChooseCompany.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\loader.gif" />
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminEmployees.aspx.cs">
+      <DependentUpon>adminEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminEmployees.aspx.designer.cs">
+      <DependentUpon>adminEmployees.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChooseCompany.aspx.cs">
       <DependentUpon>ChooseCompany.aspx</DependentUpon>

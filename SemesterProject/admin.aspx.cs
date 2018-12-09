@@ -85,8 +85,8 @@ namespace SemesterProject
                     lbEdit.Attributes.Add("data-index", index.ToString());
 
                     // Add event listeners 
-                    lbUser.Click += new EventHandler(this.viewUsersClicked);
-                    lbEdit.Click += new EventHandler(this.editCompanyClicked);
+                    lbUser.Click += new EventHandler(viewUsersClicked);
+                    lbEdit.Click += new EventHandler(editCompanyClicked);
 
 
                     // Add buttons to cells
@@ -127,36 +127,38 @@ namespace SemesterProject
             // get the company from companies list using the index
             Company company = companies[index];
             // Set modal title
-            adminModalTitle.Text = $"Editing {company.name}";
+            editCompanyTitle.Text = $"Editing {company.name}";
             // Set form values
             tbCompanyName.Text = company.name;
             tbEmployeeCount.Text = company.count.ToString();
             // set hidden value to company index
             hiddenCompanyIndex.Value = index.ToString();
             // Register script manager to show the modal with the updated values
-            ScriptManager.RegisterStartupScript(adminModalUpdatePanel, adminModalUpdatePanel.GetType(), "show", "$(function () { $('#adminModal').modal('show'); });", true);
-            adminModalUpdatePanel.Update();
+            ScriptManager.RegisterStartupScript(editCompanyUpdatePanel, editCompanyUpdatePanel.GetType(), "show", "$(function () { $('#editCompanyModal').modal('show'); });", true);
+            editCompanyUpdatePanel.Update();
         }
 
         protected void viewUsersClicked(object sender, EventArgs e)
         {
-            // go to edit users page
+            System.Diagnostics.Debug.WriteLine("Clicked event");
+            // We'll retrieve some information then transfer control to admin employees page.
             LinkButton btn = (LinkButton)sender;
-            //Session[""] = Convert.ToInt32(btn.Attributes["data-index"]);
+            int index = Convert.ToInt32(btn.Attributes["data-index"]);
+            Company company = companies[index];
+            // Store company id and name into session variable for retrieval on next page
+            Session["managingCompanyId"] = company.id;
+            Session["managingCompanyName"] = company.name;
+            // Redirect to admin employees page
+            Response.Redirect("~/adminEmployees.aspx");
         }
 
-        protected void btnModalClose_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void adminModalSave_Click(object sender, EventArgs e)
+        protected void editCompanySave_Click(object sender, EventArgs e)
         {
             // Show alert if either field is blank
             if (string.IsNullOrWhiteSpace(tbCompanyName.Text) || string.IsNullOrWhiteSpace(tbEmployeeCount.Text))
             {
-                adminModalAlert.Attributes["class"] = "alert alert-danger";
-                adminModalAlert.InnerText = "You must enter a value for both fields.";
+                editCompanyModalAlert.Attributes["class"] = "alert alert-danger";
+                editCompanyModalAlert.InnerText = "You must enter a value for both fields.";
                 return;
             }
 
@@ -177,12 +179,14 @@ namespace SemesterProject
                 // Refresh the UpdatePanel
                 tableUpdatePanel.Update();
                 // Hide the modal
-                ScriptManager.RegisterStartupScript(tableUpdatePanel, tableUpdatePanel.GetType(), "hide", "$(function () { $('#adminModal').modal('hide'); });", true);
+                ScriptManager.RegisterStartupScript(tableUpdatePanel, tableUpdatePanel.GetType(), "hide", "$(function () { $('#editCompanyModal').modal('hide'); });", true);
 
             }
             else
             {
-                // do something else
+                // Show failure notice
+                editCompanyModalAlert.Attributes["class"] = "alert alert-danger";
+                editCompanyModalAlert.InnerText = "Update failed, try again.";
                 System.Diagnostics.Debug.WriteLine("We Failed");
             }
         }

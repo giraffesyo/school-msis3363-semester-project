@@ -10,7 +10,25 @@
 namespace SemesterProject {
     
     
-    public partial class admin {
+    public partial class adminEmployees {
+        
+        /// <summary>
+        /// lblHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeader;
+        
+        /// <summary>
+        /// adminEmployeesAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminEmployeesAlert;
         
         /// <summary>
         /// tableUpdatePanel control.
@@ -22,75 +40,57 @@ namespace SemesterProject {
         protected global::System.Web.UI.UpdatePanel tableUpdatePanel;
         
         /// <summary>
-        /// companiesTable control.
+        /// employeesTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table companiesTable;
+        protected global::System.Web.UI.WebControls.Table employeesTable;
         
         /// <summary>
-        /// editCompanyUpdatePanel control.
+        /// deleteEmployeeUpdatePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel editCompanyUpdatePanel;
+        protected global::System.Web.UI.UpdatePanel deleteEmployeeUpdatePanel;
         
         /// <summary>
-        /// editCompanyTitle control.
+        /// deleteEmployeeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label editCompanyTitle;
+        protected global::System.Web.UI.WebControls.Label deleteEmployeeTitle;
         
         /// <summary>
-        /// hiddenCompanyIndex control.
+        /// hiddenEmployeeIndex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hiddenCompanyIndex;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenEmployeeIndex;
         
         /// <summary>
-        /// tbCompanyName control.
+        /// lblDeleteEmployeeBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCompanyName;
+        protected global::System.Web.UI.WebControls.Label lblDeleteEmployeeBody;
         
         /// <summary>
-        /// tbEmployeeCount control.
+        /// deleteEmployeeModalAlert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmployeeCount;
-        
-        /// <summary>
-        /// editCompanyModalAlert control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editCompanyModalAlert;
-        
-        /// <summary>
-        /// editCompanySave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button editCompanySave;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl deleteEmployeeModalAlert;
     }
 }
