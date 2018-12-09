@@ -1,11 +1,13 @@
-﻿<%@ Page Title="CTS - Preferences" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="preferences.aspx.cs" Inherits="SemesterProject.preferences" %>
+﻿<%@ Page Title="CTS - Editing User" Language="C#" MasterPageFile="~/CTS.Master" AutoEventWireup="true" CodeBehind="edituser.aspx.cs" Inherits="SemesterProject.edituser" %>
+
 
 <asp:Content ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <div class="Settings">
         <img src="images/logo.png" alt="CTS Logo" />
 
         <div class="text-center">
-            <h4>Update Preferences</h4>
+            <h4>
+                <asp:Label ID="lblPageTitle" runat="server" Text="Updating User "></asp:Label></h4>
         </div>
         <div class="alert-container container">
             <div runat="server" id="lblStatus"></div>
@@ -18,7 +20,7 @@
 
             <div class="form-group">
                 <label for="tbEmail">Email: </label>
-                <asp:TextBox CssClass="form-control" ID="tbEmail" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="form-control" ID="tbEmail" runat="server" CausesValidation="True"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="You must enter an email." ControlToValidate="tbEmail" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="regexEmail" runat="server" ErrorMessage="You must enter a valid email." ControlToValidate="tbEmail" Display="Dynamic" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             </div>
@@ -49,18 +51,22 @@
                 <asp:RequiredFieldValidator ID="rfvDepartment" runat="server" ErrorMessage="You must enter a department." ControlToValidate="tbDepartment" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div>
-                <label for="cblTrainingPreferences">I am interested in learning about: </label>
+                <label for="cblTrainingPreferences">Subscribe user to the following topics: </label>
                 <asp:CheckBoxList OnDataBound="cblTrainingPreferences_DataBound" ID="cblTrainingPreferences" runat="server" DataSourceID="videoTopics" DataTextField="name" DataValueField="id">
                 </asp:CheckBoxList>
                 <asp:SqlDataSource ID="videoTopics" runat="server" ConnectionString="<%$ ConnectionStrings:F18_ksmmcquadConnectionString %>" SelectCommand="SELECT * FROM [videoTopics]"></asp:SqlDataSource>
             </div>
             <div class="w-100">
-                <asp:CheckBox ID="cbNewsletter" runat="server" Checked="true" CssClass="form-check-inline" />
-                <label for="cbNewsleeter">I would like to receive the CTS newsletter</label>
+                <asp:CheckBox ID="cbNewsletter" runat="server" CssClass="form-check-inline" />
+                <label for="cbNewsleeter">Send this user the CTS Newsletter</label>
+            </div>
+            <div class="w-100">
+                <asp:CheckBox ID="cbAdministrator" runat="server" Checked="false" CssClass="form-check-inline" />
+                <label for="cbNewsleeter">System Administrator</label>
             </div>
             <div>
                 <asp:Button ID="btnCancel" CssClass="btn btn-danger m-2 p-2" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="False" />
-                <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnSavePreferences" runat="server" Text="Save" OnClick="btnSavePreferences_Click" />
+                <asp:Button CssClass="btn btn-success m-2 p-2" ID="btnSaveUser" runat="server" Text="Save" OnClick="btnSaveUser_Click" />
             </div>
         </div>
     </div>

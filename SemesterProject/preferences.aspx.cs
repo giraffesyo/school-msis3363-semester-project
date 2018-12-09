@@ -102,7 +102,6 @@ namespace SemesterProject
             string formJobTitle = tbTitle.Text;
             string formDepartment = tbDepartment.Text;
             bool formNewsletter = cbNewsletter.Checked;
-            // get the topics the user is interested in
 
             // call the update function with the information gathered from the form
             int updateResponse = UserManager.updateUser(userid, User.Identity.Name, formEmail, formFirstName, formLastName, formPhoneNumber, formJobTitle, formDepartment, formNewsletter, cblTrainingPreferences);

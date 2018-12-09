@@ -103,6 +103,7 @@
     <Content Include="admin.aspx" />
     <Content Include="adminEmployees.aspx" />
     <Content Include="ChooseCompany.aspx" />
+    <Content Include="edituser.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\loader.gif" />
     <Content Include="login.aspx" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="CompanyManager.cs" />
     <Compile Include="CTSRoleProvider.cs" />
+    <Compile Include="edituser.aspx.cs">
+      <DependentUpon>edituser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edituser.aspx.designer.cs">
+      <DependentUpon>edituser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

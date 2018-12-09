@@ -204,9 +204,9 @@ namespace SemesterProject
                 System.Diagnostics.Debug.WriteLine("General exception: " + ex.Message);
             }
         }
-
-        public static int updateUser(int id, string currentEmail, string email, string firstName, string lastName, string phone, string title, string department, bool newsletter, CheckBoxList cblTrainingPreferences)
+        public static int updateUser(int id, string currentEmail, string email, string firstName, string lastName, string phone, string title, string department, bool newsletter, bool? administrator, CheckBoxList cblTrainingPreferences)
         {
+
             // first check that the email that we're changing to is not in use
             // the checkemail call is intentionally on the right side for short circuit evaluation (only called if usernames arent equal)
             bool changingEmail = currentEmail.ToLower() != email.ToLower();
@@ -216,22 +216,40 @@ namespace SemesterProject
                 return EMAIL_IN_USE;
             }
 
-            try
+            //we have to find out if we're updating administrator or not
+            // then update the command considering that
+            SqlCommand UpdateUserCommand;
+            SqlParameterCollection parameters;
+            if (administrator == null)
             {
                 // create update query string
                 string UpdateUserQuery = "UPDATE users SET email = @email, firstName = @firstName, lastName = @lastName, phone = @phone, title = @title, department = @department, newsletter = @newsletter WHERE id = @userId;";
                 //instantiate command with above query and our database as its connection
-                SqlCommand UpdateUserCommand = new SqlCommand(UpdateUserQuery, CTSDatabase);
-                SqlParameterCollection parameters = UpdateUserCommand.Parameters;
-                //set paremeters based off of method paremeters
-                parameters.AddWithValue("@email", email.ToLower());
-                parameters.AddWithValue("@firstName", firstName);
-                parameters.AddWithValue("@lastName", lastName);
-                parameters.AddWithValue("@phone", phone);
-                parameters.AddWithValue("@title", title);
-                parameters.AddWithValue("@department", department);
-                parameters.AddWithValue("@newsletter", newsletter);
-                parameters.AddWithValue("@userId", id);
+                UpdateUserCommand = new SqlCommand(UpdateUserQuery, CTSDatabase);
+                parameters = UpdateUserCommand.Parameters;
+            }
+            else
+            {
+                // create update query string with administrator parameter
+                string UpdateUserQuery = "UPDATE users SET email = @email, firstName = @firstName, lastName = @lastName, phone = @phone, title = @title, department = @department, newsletter = @newsletter, administrator = @administrator WHERE id = @userId;";
+                //instantiate command with above query and our database as its connection
+                UpdateUserCommand = new SqlCommand(UpdateUserQuery, CTSDatabase);
+                parameters = UpdateUserCommand.Parameters;
+                // since we have an administrator value we must add it to our parameters
+                parameters.AddWithValue("@administrator", administrator);
+            }
+
+            //set paremeters based off of method paremeters
+            parameters.AddWithValue("@email", email.ToLower());
+            parameters.AddWithValue("@firstName", firstName);
+            parameters.AddWithValue("@lastName", lastName);
+            parameters.AddWithValue("@phone", phone);
+            parameters.AddWithValue("@title", title);
+            parameters.AddWithValue("@department", department);
+            parameters.AddWithValue("@newsletter", newsletter);
+            parameters.AddWithValue("@userId", id);
+            try
+            {
                 // Open connection
                 CTSDatabase.Open();
                 //Execute command
@@ -240,8 +258,8 @@ namespace SemesterProject
                 AddUserInterests(id, cblTrainingPreferences);
                 if (rowsAffected == 1)
                 {
-                    // if we changed the users email we need to update their cookie
-                    if (changingEmail)
+                    // if we changed the users email and this wasnt an administrator change we need to update their cookie
+                    if (changingEmail && administrator == null)
                     {
                         FormsAuthentication.SetAuthCookie(email, true);
                     }
@@ -273,6 +291,12 @@ namespace SemesterProject
 
             }
             return GENERAL_FAILURE;
+        }
+
+        // overload the updateUser method so that it can handle both administrator and non administrator requests
+        public static int updateUser(int id, string currentEmail, string email, string firstName, string lastName, string phone, string title, string department, bool newsletter, CheckBoxList cblTrainingPreferences)
+        {
+            return updateUser(id, currentEmail, email, firstName, lastName, phone, title, department, newsletter, null, cblTrainingPreferences);
         }
     }
 }
