@@ -103,6 +103,7 @@
     <Content Include="admin.aspx" />
     <Content Include="adminadduser.aspx" />
     <Content Include="adminEmployees.aspx" />
+    <Content Include="careers.aspx" />
     <Content Include="ChooseCompany.aspx" />
     <Content Include="edituser.aspx" />
     <Content Include="Global.asax" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="adminEmployees.aspx.designer.cs">
       <DependentUpon>adminEmployees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="careers.aspx.cs">
+      <DependentUpon>careers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="careers.aspx.designer.cs">
+      <DependentUpon>careers.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChooseCompany.aspx.cs">
       <DependentUpon>ChooseCompany.aspx</DependentUpon>

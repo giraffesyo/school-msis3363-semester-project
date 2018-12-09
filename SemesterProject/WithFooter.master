@@ -3,6 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyPlaceholder" runat="server">
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
+<asp:Content ContentPlaceHolderID="ExtraScripts" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ExtraScripts"></asp:ContentPlaceHolder>
+</asp:Content>
 
 <asp:Content ID="FooterContent" ContentPlaceHolderID="FooterPlaceholder" runat="server">
     <!-- Footer -->
@@ -14,6 +17,8 @@
                         <li><a href="/Default.aspx">HOME</a></li>
                         <li><a href="/clients.aspx">CLIENTS</a></li>
                         <li><a href="/Team.aspx">TEAM</a></li>
+
+                        <li><a href="/Careers.aspx">CAREERS</a></li>
                         <li><a href="/Contact.aspx">CONTACT</a></li>
                     </ul>
                 </div>

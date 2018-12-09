@@ -148,9 +148,9 @@
 
 
     .footer li {
-       margin: 1rem 0;
+        margin: 1rem 0;
     }
-    
+
 
 .sitemap {
     margin: auto 0;
@@ -310,3 +310,58 @@
     background: url(../images/loader.gif) center center no-repeat;
 }
 
+/* Careers page styles*/
+
+.Careers {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+    .Careers .group {
+        display: inline-flex;
+        flex-basis: 100%;
+        justify-content: space-between;
+        width: 40%;
+    }
+
+        .Careers .group > div {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            margin: 0.25rem;
+            width: 100%;
+        }
+
+    .Careers .cbl {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+        .Careers .cbl span {
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+        .Careers .buttons {
+            padding: 1rem
+        }
+        .Careers .btn {
+            padding: 1rem;
+            min-width: 400px;
+        }
+
+
+/* make careers page responsive*/
+@media screen and (max-width: 576px) {
+    .Careers .group {
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    
+    .Careers .btn {
+        min-width: unset;
+    }
+}

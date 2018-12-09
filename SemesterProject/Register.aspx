@@ -15,7 +15,6 @@
                     <label for="lblEmployeeCount">Number of Employees:</label>
                     <asp:Label CssClass="form-control-plaintext" readonly="true" ID="lblEmployeeCount" runat="server" Text=""></asp:Label>
                 </div>
-
                 <div class="form-group">
                     <label for="tbEmail">Email: </label>
                     <asp:TextBox CssClass="form-control" ID="tbEmail" runat="server" placeholder="hi@cts.net"></asp:TextBox>
@@ -40,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tbPhoneNumber">Phone Number:</label>
-                    <asp:TextBox ID="tbPhoneNumber" CssClass="form-control" runat="server" placeholder="918-512-8989" MaxLength="12"></asp:TextBox>
+                    <asp:TextBox class="phone" ID="tbPhoneNumber" CssClass="form-control" runat="server" placeholder="918-512-8989" MaxLength="12"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server" ErrorMessage="You must enter your phone number." ControlToValidate="tbPhoneNumber" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="regexPhoneNumber" runat="server" ErrorMessage="You must enter a valid phone number." ControlToValidate="tbPhoneNumber" ForeColor="Red" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
