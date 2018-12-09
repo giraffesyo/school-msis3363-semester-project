@@ -20,6 +20,15 @@ namespace SemesterProject
             {
                 Response.Redirect("~/clients.aspx");
             }
+
+            // Show a message if they just deleted their account
+            bool accountDeleted = Convert.ToBoolean(Session["accountDeleted"]);
+            Session["accountDeleted"] = null;
+            if (accountDeleted)
+            {
+                loginAlert.Visible = true;
+                loginAlert.InnerText = "Your account has successfully been deleted.";
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

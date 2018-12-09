@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 namespace SemesterProject
 {
@@ -157,6 +158,30 @@ namespace SemesterProject
             finally
             {
                 myConnection.Close();
+            }
+        }
+
+        protected void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            // show the modal
+            ScriptManager.RegisterStartupScript(deleteAccountUpdatePanel, deleteAccountUpdatePanel.GetType(), "showDelete", "$(function () { $('#deleteAccountModal').modal('show'); });", true);
+
+        }
+        protected void confirmAccountDeletion(object sender, EventArgs e)
+        {
+            // The user confirmed that they want to delete their account
+            string email = User.Identity.Name;
+            int response = UserManager.DeleteUser(email);
+            if (response == UserManager.SUCCESS)
+            {
+                FormsAuthentication.SignOut();
+                Session["accountDeleted"] = true;
+                Response.Redirect("~/login.aspx");
+            }
+            else
+            {
+                deleteAccountModalAlert.Attributes["class"] = "alert alert-danger";
+                deleteAccountModalAlert.InnerText = "There was a problem deleting your account.";
             }
         }
     }

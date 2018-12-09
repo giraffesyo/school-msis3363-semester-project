@@ -177,6 +177,53 @@ namespace SemesterProject
             }
         }
 
+
+        public static int DeleteUser(string email)
+        {
+            try
+            {
+                // create deletion query string
+                string deleteUserQuery = "DELETE from users where email = @email;";
+                SqlCommand deleteUserCommand = new SqlCommand(deleteUserQuery, CTSDatabase);
+                deleteUserCommand.Parameters.AddWithValue("@email", email);
+                // Rows affected should be >= 1, if its more than one its because of the
+                // cascade deletion of user video interests associate with this user
+                CTSDatabase.Open();
+                int RowsAffected = deleteUserCommand.ExecuteNonQuery();
+                if (RowsAffected > 0)
+                {
+                    return SUCCESS;
+                }
+                else
+                {
+                    return GENERAL_FAILURE;
+                }
+            }
+            catch (SqlException sex)
+            {
+                //Log out any SQL Exceptions
+                System.Diagnostics.Debug.WriteLine("SQL exception number: " + sex.Number);
+                System.Diagnostics.Debug.WriteLine("SQL exception message: " + sex.Message);
+
+                return SQL_FAILURE;
+
+            }
+            catch (Exception ex)
+            {
+                //General exceptions
+                System.Diagnostics.Debug.WriteLine("General exception: " + ex.Message);
+
+                return GENERAL_FAILURE;
+            }
+            finally
+            {
+                //Ensure we close the connection
+                CTSDatabase.Close();
+            }
+        }
+
+
+
         private static void AddUserInterests(int userId, CheckBoxList cblTrainingPreferences)
         {
             try
