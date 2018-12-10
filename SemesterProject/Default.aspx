@@ -12,13 +12,13 @@
         <div class="center">
             <div class="image-group">
 
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-down" data-aos-duration="1000">
                     <img src="images/group1.jpg" alt="CTS Team" />
                 </div>
-                <div class="hero-text">Who are we?</div>
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">Who are we?</div>
             </div>
 
-            <div class="hero-subtext">
+            <div class="hero-subtext" data-aos="fade-right">
                 Corporation Training Solutions (CTS) is a Corporate Training & Consulting company since 2009. We
             specialize in the development of managers, leaders, and individual team members. We have extensive
             experience in human resources management and corporate technology tools. In addition to our fulltime
@@ -33,7 +33,7 @@
     </div>
     <div class="hero short moonlit-asteroid">
         <div class="center">
-            <div class="hero-subtext">
+            <div class="hero-subtext" data-aos="fade" data-aos-duration="1000">
                 Our mission is to design and deliver high impact development programs and a wide range of consultancy
 services that produce outstanding human performance in your organizations.
             </div>
@@ -41,14 +41,14 @@ services that produce outstanding human performance in your organizations.
         </div>
     </div>
     <div class="hero taran-tado ">
-        <div class="center philosophy">
+        <div class="center philosophy" data-aos="zoom-in" data-aos-duration="1000">
             <div class="hero-text">Our Guiding Philosophy</div>
             <div class="hero-subtext">
                 We are committed to creating a strong and continuous improvement in your organization. We create a
-smart partnership with you to fully understand your unique business strategy, goals, needs, objectives
-and culture. Following that, your needs will be studied and a tailor-made training plan will be designed
-for your organization. The core aim of the training is to build and sustain the skills and behaviors that are
-essential to your business success.
+                smart partnership with you to fully understand your unique business strategy, goals, needs, objectives
+                and culture. Following that, your needs will be studied and a tailor-made training plan will be designed
+                for your organization. The core aim of the training is to build and sustain the skills and behaviors that are
+                essential to your business success.
             </div>
         </div>
     </div>

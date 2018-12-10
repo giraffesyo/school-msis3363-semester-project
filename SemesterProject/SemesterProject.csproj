@@ -109,6 +109,7 @@
     <Content Include="Global.asax" />
     <Content Include="images\group1.jpg" />
     <Content Include="images\loader.gif" />
+    <Content Include="images\rawpixel-659501-unsplash.jpg" />
     <Content Include="login.aspx" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
