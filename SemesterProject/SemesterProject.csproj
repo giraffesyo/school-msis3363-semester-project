@@ -130,6 +130,7 @@
     <Content Include="preferences.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterCompany.aspx" />
+    <Content Include="scripts\executives.js" />
     <Content Include="scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <Content Include="fonts\FontAwesome.otf" />
