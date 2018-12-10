@@ -251,6 +251,7 @@
 .headshot {
     transition: opacity ease .25s;
     opacity: .6;
+    cursor: pointer;
 }
 
     .headshot:hover {
