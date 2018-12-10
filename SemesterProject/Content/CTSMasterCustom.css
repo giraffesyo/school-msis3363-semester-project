@@ -70,12 +70,29 @@
 
 .hero {
     height: 100vh;
-    width: 100vw;
+    width: calc(100vw-80px);
     display: flex;
     justify-content: flex-start;
     text-align: center;
     flex-flow: column wrap;
 }
+
+    .hero.long {
+        height: 160vh;
+    }
+
+    .hero.short {
+        height: 75vh;
+    }
+
+    .hero .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        flex-wrap: wrap;
+    }
+
 
 .hero-text {
     max-width: 100%;
@@ -90,6 +107,33 @@
     padding: 1rem;
 }
 
+.hero-image {
+    width: 50%;
+}
+
+.hero-image {
+    display: inline-block;
+    height: 100%;
+}
+
+.image-group {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .image-group .hero-text {
+        display: inline-block;
+        flex-basis: 100%;
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .image-group img {
+        width: 100%;
+    }
+
 .red-sunset {
     color: #fff;
     background: #355C7D; /* fallback for old browsers */
@@ -97,14 +141,35 @@
     background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.anamnisar {
+    background: #9796f0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .midnight-city {
+    color: white;
     background: #232526; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.moonlit-asteroid {
+    color: white;
+    background: #0F2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .black {
     background: #000;
+}
+
+@media screen and (max-width: 576px) {
+    .hero-image {
+        width: 150%;
+        padding-top: 1rem;
+    }
 }
 
 @media screen and (min-width: 576px) {
@@ -120,6 +185,13 @@
     .hero-subtext {
         font-size: 1.5rem;
         max-width: 50%;
+    }
+
+    .hero.long {
+        height: 100vh;
+    }
+    .hero.short {
+        height: 100vh;
     }
 }
 
@@ -345,30 +417,45 @@
             font-size: 1.2rem;
             padding: 1rem;
         }
-        .Careers .buttons {
-            padding: 1rem
-        }
-        .Careers .btn {
-            padding: 1rem;
-            min-width: 400px;
-        }
-        .thankyou {
-            width:100vw;
-            height: 80vh;
-            display: flex;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+
+    .Careers .buttons {
+        padding: 1rem;
+    }
+
+    .Careers .btn {
+        padding: 1rem;
+        min-width: 400px;
+    }
+
+.thankyou {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* make careers page responsive*/
 @media screen and (max-width: 576px) {
     .Careers .group {
         flex-wrap: wrap;
         width: 90%;
     }
-    
+
     .Careers .btn {
         min-width: unset;
     }
+}
+
+.taran-tado {
+    color: white;
+    background: #23074d; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cc5333, #23074d); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cc5333, #23074d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.philosophy {
+    width: 80%;
+    margin-left: 10%;
 }
