@@ -248,15 +248,19 @@
     z-index: 1000;
 }
 
+.headshot {
+    transition: opacity ease .25s;
+    opacity: .6;
+}
+
+    .headshot:hover {
+        opacity: 1;
+    }
+
     .headshot img {
-        opacity: .8;
-        transition: opacity ease .25s;
         border-radius: 50%;
     }
 
-        .headshot img:hover {
-            opacity: 1;
-        }
 
 .AsideHeadshots {
 }
