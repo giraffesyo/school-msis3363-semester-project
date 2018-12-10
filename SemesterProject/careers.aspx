@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithFooter.master" AutoEventWireup="true" CodeBehind="careers.aspx.cs" Inherits="SemesterProject.careers" %>
 
 <asp:Content ContentPlaceHolderID="nestedBody" runat="server">
+    <asp:UpdatePanel ID="CareersUpdatePanel" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+    <div class="hero thankyou">
+        <h3 class="hero-text">Thank you.</h3>
+    </div>
     <div class="Careers">
+
         <h2>Apply to work at CTS</h2>
         <div class="group">
             <div>
@@ -48,11 +54,12 @@
         </div>
         <asp:SqlDataSource ID="cblDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:F18_ksmmcquadConnectionString %>" SelectCommand="SELECT [name], [id] FROM [careerTopics]"></asp:SqlDataSource>
         <div class="buttons">
-            <asp:Button runat="server" ID="btnSubmitApplication" CssClass="btn btn-dark" Text="Submit Application" />
+            <asp:Button runat="server" OnClick="btnSubmitApplication_Click" ID="btnSubmitApplication" CssClass="btn btn-dark" Text="Submit Application" />
         </div>
-    </div>
+    </div></ContentTemplate></asp:UpdatePanel>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ExtraScripts" runat="server">
     <script src="scripts/phone.js" type="text/javascript"></script>
+    <script src="scripts/thankyou.js" type="text/javascript"></script>
 </asp:Content>

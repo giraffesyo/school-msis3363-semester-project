@@ -352,8 +352,15 @@
             padding: 1rem;
             min-width: 400px;
         }
-
-
+        .thankyou {
+            width:100vw;
+            height: 80vh;
+            display: flex;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 /* make careers page responsive*/
 @media screen and (max-width: 576px) {
     .Careers .group {
