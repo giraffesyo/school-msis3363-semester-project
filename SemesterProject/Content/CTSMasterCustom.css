@@ -190,6 +190,7 @@
     .hero.long {
         height: 100vh;
     }
+
     .hero.short {
         height: 100vh;
     }
@@ -244,6 +245,7 @@
     width: 200px;
     margin: 1rem;
     display: inline-block;
+    z-index: 1000;
 }
 
     .headshot img {
@@ -462,19 +464,21 @@
 
 
 ul.stars {
-  list-style: none;
-  padding: 0;
-  font-size: 2rem;
-  font-weight: 600;
+    list-style: none;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 600;
 }
-ul.stars li {
-  padding-left: 1.3em;
-}
-ul.stars li:before {
-  color: gold;
-  content: "\f005"; /* FontAwesome Unicode */
-  font-family: FontAwesome;
-  display: inline-block;
-  margin-left: -1.3em; /* same as padding-left set on li */
-  width: 1.3em; /* same as padding-left set on li */
-}
+
+    ul.stars li {
+        padding-left: 1.3em;
+    }
+
+        ul.stars li:before {
+            color: gold;
+            content: "\f005"; /* FontAwesome Unicode */
+            font-family: FontAwesome;
+            display: inline-block;
+            margin-left: -1.3em; /* same as padding-left set on li */
+            width: 1.3em; /* same as padding-left set on li */
+        }

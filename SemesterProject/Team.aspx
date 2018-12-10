@@ -19,16 +19,16 @@
             </div>
             <div class="row mt-4 mb-4">
                 <div class="col-12 col-md-4 offset-md-1 order-1 order-md-0">
-                    <div class="headshot">
+                    <div class="headshot" data-name="Kim Strauss" data-title="President/CEO">
                         <asp:Image data-aos="fade-left" data-aos-duration="2000" CssClass="img-fluid" ID="imgKimStrauss" runat="server" ImageUrl="~/images/KimStraussHeadshot.jpg" />
                     </div>
-                    <div class="headshot">
+                    <div class="headshot" data-name="Monica Sadler" data-title="Marketing Director">
                         <asp:Image data-aos="fade-top" data-aos-duration="2000" CssClass="img-fluid" ID="imgMonicaSadler" runat="server" ImageUrl="~/images/TatumHeadshot.jpg" />
                     </div>
-                    <div class="headshot">
+                    <div class="headshot" data-name="Quinn Schaeffer" data-title="IT Director">
                         <asp:Image data-aos="fade-bottom" data-aos-duration="2000" CssClass="img-fluid" ID="imgQuinn" runat="server" ImageUrl="~/images/QuinnHeadshot.jpg" />
                     </div>
-                    <div class="headshot">
+                    <div class="headshot" data-name="Taylor Crisp" data-title="Vice-President">
                         <asp:Image data-aos="fade-right" data-aos-duration="2000" CssClass="img-fluid" ID="imgTaylorCrisp" runat="server" ImageUrl="~/images/TaylorHeadshot.jpg" />
                     </div>
                 </div>
@@ -80,4 +80,8 @@
     </div>
 
 
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="ExtraScripts">
+    <script src="scripts/executives.js" type="text/javascript"></script>
 </asp:Content>
